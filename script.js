@@ -168,10 +168,17 @@ if (experienceTimeline) {
       <article class="timeline-item reveal">
         <div class="timeline-marker" aria-hidden="true"></div>
         <div class="timeline-content">
-          <h3>${role}</h3>
-          <p class="meta">${organization} • ${dates}</p>
+          <div class="timeline-head">
+            <div>
+              <h3>${role}</h3>
+              <p class="meta">${organization} • ${dates}</p>
+            </div>
+            <button class="detail-toggle" type="button" aria-expanded="false">Additional Details</button>
+          </div>
           <p>${summary}</p>
-          <ul>${renderList(achievements)}</ul>
+          <div class="detail-panel" hidden>
+            <ul>${renderList(achievements)}</ul>
+          </div>
         </div>
       </article>`
     )
@@ -246,4 +253,22 @@ if (carousel) {
   track.addEventListener('scroll', updateButtons, { passive: true });
   window.addEventListener('resize', updateButtons);
   updateButtons();
+}
+
+
+const experienceContainer = document.getElementById('experience-timeline');
+if (experienceContainer) {
+  experienceContainer.addEventListener('click', (event) => {
+    const button = event.target.closest('.detail-toggle');
+    if (!button) return;
+
+    const card = button.closest('.timeline-content');
+    const panel = card?.querySelector('.detail-panel');
+    if (!panel) return;
+
+    const expanded = button.getAttribute('aria-expanded') === 'true';
+    button.setAttribute('aria-expanded', String(!expanded));
+    button.textContent = expanded ? 'Additional Details' : 'Hide Details';
+    panel.hidden = expanded;
+  });
 }
