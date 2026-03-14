@@ -24,7 +24,6 @@
           <ul class="nav-links">
             <li><a href="#about">About</a></li>
             <li><a href="#experience">Experience</a></li>
-            <li><a href="#highlights">Highlights</a></li>
             <li><a href="#recommendations">Recommendations</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
@@ -66,7 +65,7 @@
             <p class="eyebrow">About / Expertise</p>
             <h2>Executive Profile</h2>
           </header>
-          <div class="about-grid">
+          <div class="about-stack">
             <article class="about-copy reveal">
               <p>
                 Cornelia Ciffelli is a senior strategist specializing in marketing, partnerships,
@@ -89,9 +88,6 @@
                 Consumer Behavior (Arizona State University & Texas State University) and Bachelor
                 of Communications in Digital Advertising and Consumer Science.
               </p>
-              <p class="placeholder-note">
-                Placeholder: Add certifications, board affiliations, and industry awards.
-              </p>
             </article>
             <div class="expertise-grid reveal" id="expertise-grid"></div>
           </div>
@@ -102,19 +98,9 @@
         <div class="container">
           <header class="section-header reveal">
             <p class="eyebrow">Experience</p>
-            <h2>Leadership Timeline</h2>
+            <h2>Experience</h2>
           </header>
-          <div class="timeline" id="experience-timeline"></div>
-        </div>
-      </section>
-
-      <section class="section section-light" id="highlights">
-        <div class="container">
-          <header class="section-header reveal">
-            <p class="eyebrow">Featured Strategy Highlights</p>
-            <h2>Strategic Impact Snapshots</h2>
-          </header>
-          <div class="highlight-grid" id="highlights-grid"></div>
+          <div class="timeline timeline-snake" id="experience-timeline"></div>
         </div>
       </section>
 
@@ -126,10 +112,11 @@
           </header>
           <div class="carousel reveal" data-carousel>
             <button class="carousel-btn prev" aria-label="Previous recommendation" data-carousel-prev>←</button>
-            <div class="carousel-track" data-carousel-track id="recommendations-track"></div>
+            <div class="carousel-viewport">
+              <div class="carousel-track" data-carousel-track id="recommendations-track"></div>
+            </div>
             <button class="carousel-btn next" aria-label="Next recommendation" data-carousel-next>→</button>
           </div>
-          <p class="placeholder-note reveal">Placeholder: Replace with verified recommendations and full names/titles.</p>
         </div>
       </section>
 

@@ -99,74 +99,6 @@ const portfolioData = {
       ],
     },
   ],
-  highlights: [
-    {
-      title: 'Defense Manufacturing Workforce Coalition Strategy',
-      context: 'BlueForge Alliance • Navy/DoD Outreach',
-      summary:
-        'Led partnership and outreach strategy for defense-focused workforce growth by aligning education institutions, community partners, and national organizations.',
-      outcomes: [
-        'Supported multi-million-dollar project execution tied to awareness and talent pipeline outcomes.',
-        'Aligned sponsorship and outreach initiatives with long-term manufacturing and investment goals.',
-        'Expanded visibility of workforce pathways through coordinated cross-sector programming.',
-      ],
-    },
-    {
-      title: 'Sports-to-Workforce Sponsorship Activation Model',
-      context: 'BlueForge Alliance • National Partnership Portfolio',
-      summary:
-        'Created a cross-industry activation model linking sports and education audiences to workforce development and recruiting priorities.',
-      outcomes: [
-        'Built strategic collaborations with MLB, WNBA, NCAA, and NASCAR stakeholders.',
-        'Integrated events, internships, and training pathways into partnership plans.',
-        'Delivered high-credibility campaigns balancing mission alignment and brand safety.',
-      ],
-    },
-    {
-      title: 'Global Recruitment Growth Program',
-      context: 'Jacobs • Talent Marketing & Partnerships',
-      summary:
-        'Developed global attraction strategy combining recruitment marketing, partnership outreach, and employer brand storytelling.',
-      outcomes: [
-        'Increased candidate applications by 20% through improved sourcing strategy and messaging.',
-        'Reached 1.2M+ LinkedIn followers across business lines through coordinated campaigns.',
-        'Reduced cost-per-hire by 15% via integrated recruiting and inclusion strategy.',
-      ],
-    },
-    {
-      title: 'Employer Reputation & Audience Expansion',
-      context: 'Halliburton • Global Outreach Attraction & Branding',
-      summary:
-        'Built global reputation and social growth strategy across recruitment and employer brand channels to improve engagement and trust.',
-      outcomes: [
-        'Improved Glassdoor/Indeed rating performance by 1.1% through structured reputation strategy.',
-        'Grew social audience by 100K+ with targeted recruitment marketing content.',
-        'Enhanced university recruiting support via coordinated campaign and sourcing activity.',
-      ],
-    },
-    {
-      title: 'Digital Outreach Performance Turnaround',
-      context: 'NuCerity International • Brand & Market Strategy',
-      summary:
-        'Translated digital insights into outreach and market strategy that improved engagement and supported sustainable revenue growth.',
-      outcomes: [
-        'Raised media engagement from 0.23% to 1.8% through optimized storytelling and channel execution.',
-        'Strengthened market positioning with clear brand messaging and credibility frameworks.',
-        'Improved performance alignment between outreach, data teams, and business goals.',
-      ],
-    },
-    {
-      title: 'Multi-Brand Digital Growth Leadership',
-      context: 'SMMI • Director of Digital Media Marketing',
-      summary:
-        'Directed campaign strategy, analytics, and optimization for 35 brands, including Fortune 500 clients, to increase performance and brand impact.',
-      outcomes: [
-        'Reduced bounce rates by more than 30% via data-led recommendations.',
-        'Supported measurable sales and brand consideration outcomes for enterprise clients.',
-        'Scaled digital execution frameworks across 10+ partnership-driven culture campaigns.',
-      ],
-    },
-  ],
   recommendations: [
     {
       quote:
@@ -241,26 +173,6 @@ if (experienceTimeline) {
           <p>${summary}</p>
           <ul>${renderList(achievements)}</ul>
         </div>
-      </article>`
-    )
-    .join('');
-}
-
-const highlightsGrid = document.getElementById('highlights-grid');
-if (highlightsGrid) {
-  highlightsGrid.innerHTML = portfolioData.highlights
-    .map(
-      ({ title, context, summary, outcomes, linkLabel, linkHref }) => `
-      <article class="highlight-card reveal">
-        <h3>${title}</h3>
-        <p class="meta">${context}</p>
-        <p>${summary}</p>
-        <ul>${renderList(outcomes)}</ul>
-        ${
-          linkLabel
-            ? `<a class="text-link" href="${linkHref}" aria-label="${linkLabel}">${linkLabel} →</a>`
-            : ''
-        }
       </article>`
     )
     .join('');
