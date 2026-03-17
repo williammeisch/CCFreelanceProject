@@ -69,6 +69,56 @@ const portfolioData = {
       ],
     },
   ],
+  additionalExperience: [
+    {
+      role: 'Sr. Digital Outreach Strategist',
+      organization: 'NuCerity International Inc.',
+      dates: '08/2016 – 08/2018',
+      summary:
+        'Advanced mission-driven partnership and outreach strategy to close market gaps and convert channels into measurable growth drivers.',
+      achievements: [
+        'Increased media engagement from 0.23% to 1.8% through targeted storytelling and outreach campaigns.',
+        'Developed brand and product messaging frameworks that improved emotional connection and loyalty.',
+        'Partnered with data teams to optimize campaign performance against business and impact goals.',
+      ],
+    },
+    {
+      role: 'Director of Digital Media Marketing',
+      organization: 'SMMI, Inc',
+      dates: '01/2015 – 08/2016',
+      summary:
+        'Directed digital growth strategy for top-tier brands with analytics-led execution and strategic partnership development.',
+      achievements: [
+        'Led strategy for 35 brands and 10 organizations, including 5 Fortune 500 companies.',
+        'Supported campaigns for brands including Mercedes-Benz and Domino’s with measurable growth outcomes.',
+        'Delivered strategic recommendations that reduced bounce rates by more than 30%.',
+      ],
+    },
+    {
+      role: 'Digital Marketing Specialist',
+      organization: 'Beringer Technology Group',
+      dates: '08/2014 – 01/2015',
+      summary:
+        'Delivered content and campaign strategy to improve awareness, lead quality, and conversion pathways.',
+      achievements: [
+        'Improved SEO rankings and increased lead generation through campaign optimization.',
+        'Coordinated campaign launches with sales and technical teams to improve alignment.',
+        'Strengthened digital funnel performance with targeted messaging updates.',
+      ],
+    },
+    {
+      role: 'Digital Marketing Specialist',
+      organization: 'CoreCard Software',
+      dates: '08/2013 – 08/2014',
+      summary:
+        'Expanded digital visibility and traffic through data-driven content, email, and social programs.',
+      achievements: [
+        'Increased social engagement by 400% and web traffic by 300%.',
+        'Aligned messaging with buyer journeys across channels for stronger lead quality.',
+        'Applied SEO/SEM, web analytics, and A/B testing to optimize performance.',
+      ],
+    },
+  ],
   education: [
     'Arizona State University — Master’s Degree, Digital Audience Strategy and Consumer Behavior',
     'Texas State University — Bachelor’s Degree, Advertising and Consumer Science',
@@ -80,45 +130,35 @@ const portfolioData = {
     'Athlete Marketing Essentials: NIL Certification',
   ],
   recommendations: [
-    {
-      quote: 'Cornelia leads complex partnership portfolios with executive precision and converts strategy into measurable outcomes.',
-      author: 'Executive Stakeholder',
-      title: 'Defense Manufacturing Program Partner',
-    },
-    {
-      quote: 'She built high-credibility collaborations across sports, education, and community systems that accelerated talent pipelines.',
-      author: 'Program Collaborator',
-      title: 'Sponsorship & Outreach Leader',
-    },
-    {
-      quote: 'Her recruitment marketing strategy improved applications, candidate quality, and long-term brand relevance.',
-      author: 'Global Talent Leader',
-      title: 'HR & Talent Partnerships, Jacobs',
-    },
-    {
-      quote: 'Cornelia combines audience insight with disciplined execution—every campaign is accountable to clear KPIs.',
-      author: 'Cross-Functional Partner',
-      title: 'Global Outreach & Branding, Halliburton',
-    },
-    {
-      quote: 'She aligns stakeholders quickly and turns ambiguity into an actionable roadmap teams can execute against.',
-      author: 'Corporate Partner',
-      title: 'Community & Partnership Programs',
-    },
-    {
-      quote: 'From sponsorship design to activation, Cornelia protects brand integrity while delivering growth and trust.',
-      author: 'Senior Marketing Partner',
-      title: 'Brand & Sponsorship Strategy',
-    },
-    {
-      quote: 'Strategic, collaborative, and outcomes-first—exactly the leadership style needed in high-stakes initiatives.',
-      author: 'Executive Advisor',
-      title: 'Strategic Partnerships Council',
-    },
+    { quote: 'Cornelia leads complex partnership portfolios with executive precision and converts strategy into measurable outcomes.', author: 'Executive Stakeholder', title: 'Defense Manufacturing Program Partner' },
+    { quote: 'She built high-credibility collaborations across sports, education, and community systems that accelerated talent pipelines.', author: 'Program Collaborator', title: 'Sponsorship & Outreach Leader' },
+    { quote: 'Her recruitment marketing strategy improved applications, candidate quality, and long-term brand relevance.', author: 'Global Talent Leader', title: 'HR & Talent Partnerships, Jacobs' },
+    { quote: 'Cornelia combines audience insight with disciplined execution—every campaign is accountable to clear KPIs.', author: 'Cross-Functional Partner', title: 'Global Outreach & Branding, Halliburton' },
+    { quote: 'She aligns stakeholders quickly and turns ambiguity into an actionable roadmap teams can execute against.', author: 'Corporate Partner', title: 'Community & Partnership Programs' },
+    { quote: 'From sponsorship design to activation, Cornelia protects brand integrity while delivering growth and trust.', author: 'Senior Marketing Partner', title: 'Brand & Sponsorship Strategy' },
+    { quote: 'Strategic, collaborative, and outcomes-first—exactly the leadership style needed in high-stakes initiatives.', author: 'Executive Advisor', title: 'Strategic Partnerships Council' },
   ],
 };
 
 const renderList = (items) => items.map((item) => `<li>${item}</li>`).join('');
+
+const renderExperienceItem = ({ role, organization, dates, summary, achievements }, extraClass = '') => `
+  <article class="timeline-item reveal ${extraClass}">
+    <div class="timeline-marker" aria-hidden="true"></div>
+    <div class="timeline-content">
+      <div class="timeline-head">
+        <div>
+          <h3>${role}</h3>
+          <p class="meta">${organization} • ${dates}</p>
+        </div>
+        <button class="detail-toggle" type="button" aria-expanded="false">Additional Details</button>
+      </div>
+      <p>${summary}</p>
+      <div class="detail-panel" hidden>
+        <ul>${renderList(achievements)}</ul>
+      </div>
+    </div>
+  </article>`;
 
 const renderExpertise = () => {
   const expertiseGrid = document.getElementById('expertise-grid');
@@ -136,27 +176,12 @@ const renderExperience = () => {
   const experienceTimeline = document.getElementById('experience-timeline');
   if (!experienceTimeline) return;
 
-  experienceTimeline.innerHTML = portfolioData.experience
-    .map(
-      ({ role, organization, dates, summary, achievements }) => `
-      <article class="timeline-item reveal">
-        <div class="timeline-marker" aria-hidden="true"></div>
-        <div class="timeline-content">
-          <div class="timeline-head">
-            <div>
-              <h3>${role}</h3>
-              <p class="meta">${organization} • ${dates}</p>
-            </div>
-            <button class="detail-toggle" type="button" aria-expanded="false">Additional Details</button>
-          </div>
-          <p>${summary}</p>
-          <div class="detail-panel" hidden>
-            <ul>${renderList(achievements)}</ul>
-          </div>
-        </div>
-      </article>`
-    )
+  const primary = portfolioData.experience.map((item) => renderExperienceItem(item)).join('');
+  const additional = portfolioData.additionalExperience
+    .map((item) => renderExperienceItem(item, 'more-history-item'))
     .join('');
+
+  experienceTimeline.innerHTML = `${primary}<div id="more-history-wrap" hidden>${additional}</div>`;
 };
 
 const renderEducation = () => {
@@ -173,20 +198,50 @@ const renderEducation = () => {
   }
 };
 
-const renderRecommendations = () => {
-  const recommendationTrack = document.getElementById('recommendations-track');
-  if (!recommendationTrack) return;
+const setupRecommendationsCarousel = () => {
+  const track = document.getElementById('recommendations-track');
+  const prevButton = document.querySelector('[data-carousel-prev]');
+  const nextButton = document.querySelector('[data-carousel-next]');
+  const recommendations = portfolioData.recommendations;
+  if (!track || recommendations.length < 3) return;
 
-  recommendationTrack.innerHTML = portfolioData.recommendations
-    .map(({ quote, author, title }, index) => {
-      const theme = `theme-${(index % 3) + 1}`;
-      return `
-      <article class="recommendation-card ${theme}">
-        <p class="quote">“${quote}”</p>
-        <p class="author">${author} — ${title}</p>
-      </article>`;
-    })
-    .join('');
+  let centerIndex = 1;
+
+  const cardTheme = (index) => `theme-${(index % 3) + 1}`;
+
+  const renderCarousel = () => {
+    const total = recommendations.length;
+    const leftIndex = (centerIndex - 1 + total) % total;
+    const rightIndex = (centerIndex + 1) % total;
+    const slots = [
+      { idx: leftIndex, pos: 'left' },
+      { idx: centerIndex, pos: 'center' },
+      { idx: rightIndex, pos: 'right' },
+    ];
+
+    track.innerHTML = slots
+      .map(({ idx, pos }) => {
+        const { quote, author, title } = recommendations[idx];
+        return `
+          <article class="recommendation-card ${cardTheme(idx)} ${pos}" aria-label="${pos} recommendation">
+            <p class="quote">“${quote}”</p>
+            <p class="author">${author} — ${title}</p>
+          </article>`;
+      })
+      .join('');
+  };
+
+  prevButton?.addEventListener('click', () => {
+    centerIndex = (centerIndex - 1 + recommendations.length) % recommendations.length;
+    renderCarousel();
+  });
+
+  nextButton?.addEventListener('click', () => {
+    centerIndex = (centerIndex + 1) % recommendations.length;
+    renderCarousel();
+  });
+
+  renderCarousel();
 };
 
 const setupRevealAnimation = () => {
@@ -212,45 +267,6 @@ const setupRevealAnimation = () => {
   revealElements.forEach((element) => element.classList.add('visible'));
 };
 
-const setupCarousel = () => {
-  const carousel = document.querySelector('[data-carousel]');
-  if (!carousel) return;
-
-  const track = carousel.querySelector('[data-carousel-track]');
-  const prevButton = carousel.querySelector('[data-carousel-prev]');
-  const nextButton = carousel.querySelector('[data-carousel-next]');
-  const cards = track ? Array.from(track.querySelectorAll('.recommendation-card')) : [];
-  if (!track || cards.length === 0) return;
-
-  const getScrollAmount = () => {
-    const gap = Number.parseFloat(window.getComputedStyle(track).gap || '16');
-    return cards[0].getBoundingClientRect().width + gap;
-  };
-
-  const getCurrentIndex = () => {
-    const amount = getScrollAmount();
-    if (!amount) return 0;
-    return Math.round(track.scrollLeft / amount) % cards.length;
-  };
-
-  const goToIndex = (index) => {
-    const amount = getScrollAmount();
-    track.scrollTo({ left: index * amount, behavior: 'smooth' });
-  };
-
-  prevButton?.addEventListener('click', () => {
-    const currentIndex = getCurrentIndex();
-    const target = (currentIndex - 1 + cards.length) % cards.length;
-    goToIndex(target);
-  });
-
-  nextButton?.addEventListener('click', () => {
-    const currentIndex = getCurrentIndex();
-    const target = (currentIndex + 1) % cards.length;
-    goToIndex(target);
-  });
-};
-
 const setupExperienceDetails = () => {
   const experienceContainer = document.getElementById('experience-timeline');
   if (!experienceContainer) return;
@@ -270,6 +286,21 @@ const setupExperienceDetails = () => {
   });
 };
 
+const setupExperienceHistoryToggle = () => {
+  const toggleButton = document.getElementById('history-toggle');
+  const moreWrap = document.getElementById('more-history-wrap');
+  if (!toggleButton || !moreWrap) return;
+
+  toggleButton.addEventListener('click', () => {
+    const expanded = toggleButton.getAttribute('aria-expanded') === 'true';
+    toggleButton.setAttribute('aria-expanded', String(!expanded));
+    moreWrap.hidden = expanded;
+    toggleButton.innerHTML = expanded
+      ? '<span class="history-arrow" aria-hidden="true">↓</span>Click for More Job History'
+      : '<span class="history-arrow" aria-hidden="true">↑</span>Hide Additional Job History';
+  });
+};
+
 const setCurrentYear = () => {
   const yearElement = document.getElementById('year');
   if (!yearElement) return;
@@ -279,8 +310,8 @@ const setCurrentYear = () => {
 renderExpertise();
 renderExperience();
 renderEducation();
-renderRecommendations();
+setupRecommendationsCarousel();
 setCurrentYear();
 setupRevealAnimation();
-setupCarousel();
 setupExperienceDetails();
+setupExperienceHistoryToggle();
