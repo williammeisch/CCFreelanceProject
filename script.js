@@ -1,150 +1,135 @@
 const portfolioData = {
   expertise: [
-    {
-      title: 'Strategic Partnerships',
-      icon: '🤝',
-      description:
-        'Builds high-value partnerships across corporate, education, sports, and government sectors to accelerate talent, visibility, and growth outcomes.',
-    },
-    {
-      title: 'Corporate Outreach Strategy',
-      icon: '🏛️',
-      description:
-        'Designs outreach strategies that align stakeholders, strengthen community trust, and connect partnership activity to mission-critical objectives.',
-    },
-    {
-      title: 'Sponsorship & Brand Activations',
-      icon: '📣',
-      description:
-        'Leads sponsorship campaigns and brand-safe activations that expand awareness while delivering measurable ROI and strategic relevance.',
-    },
-    {
-      title: 'Workforce Pipeline Development',
-      icon: '🎯',
-      description:
-        'Creates scalable pathways between educators, employers, and technical training ecosystems to support long-term workforce readiness.',
-    },
-    {
-      title: 'Digital Audience Strategy',
-      icon: '🧭',
-      description:
-        'Combines digital marketing, social strategy, and audience behavior insights to drive engagement, recruitment performance, and market reach.',
-    },
-    {
-      title: 'Revenue & Growth Impact',
-      icon: '📈',
-      description:
-        'Connects partnership and marketing execution to business metrics such as applications, cost efficiency, brand reputation, and pipeline growth.',
-    },
+    { title: 'Strategic Partnerships', icon: '🤝', description: 'Industry alliances and partnership ecosystems that scale visibility and opportunity.' },
+    { title: 'Outreach & Digital Strategy', icon: '📡', description: 'Integrated outreach, social, and digital strategy tied to growth and engagement metrics.' },
+    { title: 'Brand Management', icon: '🏷️', description: 'Clear brand positioning and messaging that improves trust, reach, and conversion.' },
+    { title: 'CRM & Stakeholder Engagement', icon: '🧩', description: 'Relationship strategy that aligns internal and external stakeholders around shared outcomes.' },
+    { title: 'Contract & Program Execution', icon: '🗂️', description: 'Contract negotiation and execution discipline for high-impact, cross-functional initiatives.' },
+    { title: 'ESG & Community Impact', icon: '🌍', description: 'Partnership programs that connect social impact with workforce and business priorities.' },
   ],
   experience: [
     {
       role: 'Regional Partnership Director – Corporate Partnerships and Outreach Strategy',
       organization: 'BlueForge Alliance',
-      dates: 'May 2023 – Present',
+      dates: '05/2023 – 12/2025',
       summary:
-        'Leads multi-million-dollar outreach, education, and workforce initiatives focused on Navy and DoD manufacturing ecosystems, aligning partnerships, sponsorships, and campaigns to strategic talent and visibility outcomes.',
+        'Led a 90M portfolio to advance outreach, education, and workforce initiatives tied to Navy/DoD awareness and long-term talent development.',
       achievements: [
-        'Built partnerships across MLB, WNBA, NCAA, NASCAR, and higher education to expand workforce pipeline reach.',
-        'Led workforce sponsorship strategy as outreach SME, ensuring brand-safe execution and ROI alignment to defense priorities.',
-        'Negotiated high-impact partner/vendor agreements enabling agile delivery across events, internships, training, and activations.',
+        'Built large-scale partnerships with MLB, WNBA, NCAA, NASCAR, universities, and technical schools for sponsorships, events, internships, and training programs.',
+        'Managed 25+ strategic partnerships and helped drive a 30% increase in workforce initiative awareness and engagement.',
+        'Executed multi-million-dollar philanthropic programs with tight controls across budgets, timelines, staffing, and risk.',
       ],
     },
     {
       role: 'Global Manager, Recruitment Marketing and Strategic Partnerships',
       organization: 'Jacobs',
-      dates: 'Dec 2021 – Mar 2023',
+      dates: '01/2022 – 03/2023',
       summary:
-        'Directed global recruitment marketing and partnership initiatives with HR and talent leadership to improve candidate attraction, pipeline quality, and employer brand outcomes.',
+        'Improved global attraction and sourcing performance through partnership-driven recruitment marketing and stronger employer brand strategy.',
       achievements: [
-        'Increased applications by 20% through improved attraction and sourcing strategies and stronger employer brand positioning.',
-        'Supported cross-team social impact and talent campaigns reaching 1.2M+ LinkedIn followers across business lines.',
-        'Lowered cost-per-hire by 15% through global recruiting, retention, and inclusion strategy integration.',
+        'Boosted applications by 20% and reduced cost-per-hire by 15%.',
+        'Supported talent campaigns reaching 1.2M+ LinkedIn followers across business lines.',
+        'Built end-to-end qualified talent pipelines aligned to business demand and social impact goals.',
       ],
     },
     {
       role: 'Sr. Strategist for Global Outreach Attraction and Branding',
       organization: 'Halliburton',
-      dates: 'Aug 2018 – Jun 2021',
+      dates: '08/2018 – 06/2021',
       summary:
-        'Led global outreach and recruitment branding initiatives across social channels, reputation platforms, and university recruiting partnerships to improve attraction and retention performance.',
+        'Led global outreach attraction strategy across reputation platforms, social channels, sourcing, and inclusion initiatives.',
       achievements: [
-        'Developed Glassdoor and Indeed reputation strategy, improving overall company rating by 1.1%.',
-        'Created and executed recruitment marketing social media strategy that increased followers by more than 100K.',
-        'Partnered with global HR and talent teams to strengthen sourcing strategies, candidate experience, and retention initiatives.',
+        'Improved Glassdoor/Indeed rating by 1.1% and added 100K+ followers via recruitment media strategy.',
+        'Drove diversity initiatives with sustained global representation goals and broad digital engagement.',
+        'Coordinated outreach events and passive pipeline programs with global HR and talent teams.',
       ],
     },
     {
       role: 'Sr. Digital Outreach Strategist',
       organization: 'NuCerity International Inc.',
-      dates: 'Aug 2016 – Aug 2018',
+      dates: '08/2016 – 08/2018',
       summary:
-        'Advanced mission-driven outreach and digital partnership strategy to close market gaps and convert social channels into measurable growth drivers.',
+        'Advanced mission-driven partnership and outreach strategy to close market gaps and convert channels into measurable growth drivers.',
       achievements: [
-        'Activated impact-focused partnerships and storytelling campaigns, including Glassdoor and Indeed launches.',
-        'Improved media engagement from 0.23% to 1.8% through optimized digital strategy and audience-focused execution.',
-        'Built compelling brand and product messaging to strengthen credibility, emotional connection, and loyalty.',
+        'Increased media engagement from 0.23% to 1.8% through targeted storytelling and outreach campaigns.',
+        'Developed brand and product messaging frameworks that improved emotional connection and loyalty.',
+        'Partnered with data teams to optimize campaign performance against business and impact goals.',
       ],
     },
     {
       role: 'Director of Digital Media Marketing',
-      organization: 'Social Media Management International (SMMI)',
-      dates: 'Jan 2015 – Aug 2016',
+      organization: 'SMMI, Inc',
+      dates: '01/2015 – 08/2016',
       summary:
-        'Directed digital strategy and analytics for multiple brands, including Fortune 500 clients, with a focus on performance marketing and brand consideration.',
+        'Directed digital growth strategy for top-tier brands with analytics-led execution and strategic partnership development.',
       achievements: [
-        'Collaborated with top-tier brands including Mercedes-Benz and Domino’s to support sales growth and brand consideration.',
-        'Developed digital strategy for 35 brands, including 5 Fortune 500 organizations.',
-        'Delivered analytics-driven recommendations that reduced bounce rates by more than 30%.',
+        'Led strategy for 35 brands and 10 organizations, including 5 Fortune 500 companies.',
+        'Supported campaigns for brands including Mercedes-Benz and Domino’s with measurable growth outcomes.',
+        'Delivered strategic recommendations that reduced bounce rates by more than 30%.',
+      ],
+    },
+    {
+      role: 'Digital Marketing Outreach Manager',
+      organization: 'Remax Real Estate Group',
+      dates: '03/2012 – 01/2015',
+      summary:
+        'Built outreach and activation campaigns that increased awareness and engagement through performance-led brand planning.',
+      achievements: [
+        'Enhanced outreach pipeline and brand awareness by 56%.',
+        'Improved engagement by 15% through real-time campaign monitoring and optimization.',
+        'Expanded reach through partnerships with local businesses and influencers.',
+      ],
+    },
+    {
+      role: 'Sr. Digital Market Brand Manager',
+      organization: 'KTJ LLC',
+      dates: '05/2010 – 01/2015',
+      summary:
+        'Executed targeted social strategy and collaboration programs to drive traffic, engagement, and stronger market positioning.',
+      achievements: [
+        'Increased website traffic by 125% over six months.',
+        'Negotiated 5+ social collaborations that improved engagement by 30%.',
+        'Developed buyer-persona strategy to sharpen targeted campaign execution.',
+      ],
+    },
+    {
+      role: 'Multi-Media Outreach Strategist',
+      organization: 'Houston Chronicle',
+      dates: '02/2010 – 03/2012',
+      summary:
+        'Managed cross-organization campaign communication and production workflows supporting audience growth and publishing performance.',
+      achievements: [
+        'Facilitated campaign collaboration across 5 organizations.',
+        'Increased monthly social and website clicks from 8,000 to over 15,000.',
+        'Directed production of a 70-page publication reaching 25,000 weekly readers.',
+      ],
+    },
+    {
+      role: 'Digital Media and Community Activation Specialist',
+      organization: 'Texas State University Bookstore',
+      dates: '08/2006 – 01/2010',
+      summary:
+        'Led events, digital campaigns, and performance analysis to increase student engagement and community activation reach.',
+      achievements: [
+        'Executed events and activations reaching 25,000+ students.',
+        'Drove digital campaigns for 25,000 participants with 10,000+ new followers.',
+        'Applied SEO/SEM, web analytics, and A/B testing to optimize performance.',
       ],
     },
   ],
+  resumePoints: [
+    'Arizona State University — Master’s Degree, Digital Audience Strategy and Consumer Behavior',
+    'Texas State University — Bachelor’s Degree, Advertising and Consumer Science',
+    'Certifications: Business Partnerships and Alliances; Alliances in Sports Marketing; Sports Marketing Essentials; Athlete Marketing Essentials: NIL Certification',
+  ],
   recommendations: [
-    {
-      quote:
-        'Cornelia leads complex partnership portfolios with executive precision and consistently converts outreach strategy into measurable workforce results.',
-      author: 'Executive Stakeholder',
-      title: 'Defense Manufacturing Program Partner',
-      organization: 'BlueForge Alliance Collaboration',
-    },
-    {
-      quote:
-        'She built high-credibility collaborations across sports, education, and community systems that expanded visibility and accelerated talent pipelines.',
-      author: 'National Program Collaborator',
-      title: 'Sponsorship & Outreach Leader',
-    },
-    {
-      quote:
-        'Her recruitment marketing strategy raised application performance, improved candidate experience, and strengthened long-term brand relevance.',
-      author: 'Global Talent Leader',
-      title: 'HR & Talent Partnerships',
-      organization: 'Jacobs',
-    },
-    {
-      quote:
-        'Cornelia combines audience insight with disciplined execution—campaigns are not only creative, they are accountable to KPIs.',
-      author: 'Cross-Functional Partner',
-      title: 'Global Outreach & Branding',
-      organization: 'Halliburton',
-    },
-    {
-      quote:
-        'She is exceptional at aligning stakeholders quickly, turning ambiguity into a clear roadmap, and driving momentum across teams.',
-      author: 'Program Collaborator',
-      title: 'Corporate & Community Relations',
-    },
-    {
-      quote:
-        'From sponsorship design to activation, Cornelia protects brand integrity while delivering real growth impact and partner trust.',
-      author: 'Senior Marketing Partner',
-      title: 'Brand & Sponsorship Strategy',
-    },
-    {
-      quote:
-        'Her leadership style is strategic, collaborative, and outcomes-first—exactly what organizations need during high-stakes growth initiatives.',
-      author: 'Executive Advisor',
-      title: 'Strategic Partnerships Council',
-    },
+    { quote: 'Cornelia leads complex partnership portfolios with executive precision and converts strategy into measurable outcomes.', author: 'Executive Stakeholder', title: 'Defense Manufacturing Program Partner' },
+    { quote: 'She built high-credibility collaborations across sports, education, and community systems that accelerated talent pipelines.', author: 'Program Collaborator', title: 'Sponsorship & Outreach Leader' },
+    { quote: 'Her recruitment marketing strategy improved applications, candidate quality, and long-term brand relevance.', author: 'Global Talent Leader', title: 'HR & Talent Partnerships, Jacobs' },
+    { quote: 'Cornelia combines audience insight with disciplined execution—every campaign is accountable to clear KPIs.', author: 'Cross-Functional Partner', title: 'Global Outreach & Branding, Halliburton' },
+    { quote: 'She aligns stakeholders quickly and turns ambiguity into an actionable roadmap teams can execute against.', author: 'Corporate Partner', title: 'Community & Partnership Programs' },
+    { quote: 'From sponsorship design to activation, Cornelia protects brand integrity while delivering growth and trust.', author: 'Senior Marketing Partner', title: 'Brand & Sponsorship Strategy' },
+    { quote: 'Strategic, collaborative, and outcomes-first—exactly the leadership style needed in high-stakes initiatives.', author: 'Executive Advisor', title: 'Strategic Partnerships Council' },
   ],
 };
 
@@ -185,15 +170,20 @@ if (experienceTimeline) {
     .join('');
 }
 
+const resumeList = document.getElementById('resume-points');
+if (resumeList) {
+  resumeList.innerHTML = renderList(portfolioData.resumePoints);
+}
+
 const recommendationTrack = document.getElementById('recommendations-track');
 if (recommendationTrack) {
   recommendationTrack.innerHTML = portfolioData.recommendations
-    .map(({ quote, author, title, organization }, index) => {
+    .map(({ quote, author, title }, index) => {
       const theme = `theme-${(index % 3) + 1}`;
       return `
       <article class="recommendation-card ${theme}">
         <p class="quote">“${quote}”</p>
-        <p class="author">${author} — ${title}${organization ? `, ${organization}` : ''}</p>
+        <p class="author">${author} — ${title}</p>
       </article>`;
     })
     .join('');
@@ -212,7 +202,6 @@ if ('IntersectionObserver' in window) {
     },
     { threshold: 0.2 }
   );
-
   revealElements.forEach((element) => observer.observe(element));
 } else {
   revealElements.forEach((element) => element.classList.add('visible'));
@@ -245,23 +234,19 @@ if (carousel) {
   prevButton?.addEventListener('click', () => {
     track.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
   });
-
   nextButton?.addEventListener('click', () => {
     track.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
   });
-
   track.addEventListener('scroll', updateButtons, { passive: true });
   window.addEventListener('resize', updateButtons);
   updateButtons();
 }
-
 
 const experienceContainer = document.getElementById('experience-timeline');
 if (experienceContainer) {
   experienceContainer.addEventListener('click', (event) => {
     const button = event.target.closest('.detail-toggle');
     if (!button) return;
-
     const card = button.closest('.timeline-content');
     const panel = card?.querySelector('.detail-panel');
     if (!panel) return;
