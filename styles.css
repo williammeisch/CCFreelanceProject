@@ -51,6 +51,7 @@ body {
 }
 .section-dark .eyebrow,
 .site-footer .eyebrow { color: #ceb7c8; }
+.hero .eyebrow { color: #f5d8ee; text-shadow: 0 1px 1px rgba(0,0,0,.35); }
 h1, h2, h3 { margin-top: 0; line-height: 1.2; }
 h1 { font-family: "Playfair Display", Georgia, serif; }
 h2, h3, .nav-links a, .section-title { font-family: "Inter", system-ui, sans-serif; }
@@ -63,6 +64,7 @@ p { margin-top: 0; color: var(--muted); }
 
 .hero-cta,
 .experience-tools { display: flex; gap: .8rem; flex-wrap: wrap; margin-top: 1.4rem; }
+.experience-more { margin-top: 1rem; }
 .btn {
   display: inline-flex;
   align-items: center;
@@ -83,6 +85,7 @@ p { margin-top: 0; color: var(--muted); }
 .timeline-content,
 .education-card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; box-shadow: var(--shadow); }
 .about-copy { padding: 1.2rem; }
+.subsection-title { margin: 1.45rem 0 .7rem; }
 
 .expertise-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: .85rem; margin-top: .25rem; }
 .capability-card { background: #fbfbfb; border: 1px solid var(--line); border-radius: 12px; padding: .95rem; min-height: 156px; }
@@ -181,13 +184,19 @@ ul { margin: 0; padding-left: 1.05rem; color: var(--muted); }
   padding: 1rem;
   color: #f3f4f4;
   scroll-snap-align: center;
+  display: flex;
+  flex-direction: column;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.recommendation-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 24px rgba(0, 0, 0, .28);
 }
 .recommendation-card.theme-1 { background: #612d53; }
 .recommendation-card.theme-2 { background: #853953; }
 .recommendation-card.theme-3 { background: #2c2c2c; }
-.quote { color: #f3f4f4; font-size: 1rem; }
-.author { margin-top: .95rem; font-size: .88rem; font-weight: 700;
-  white-space: nowrap; color: #f3f4f4; }
+.quote { color: #f3f4f4; font-size: 1rem; line-height: 1.5; flex: 1; }
+.author { margin-top: .95rem; font-size: .88rem; font-weight: 700; color: #f3f4f4; }
 .carousel-btn {
   width: 2.35rem;
   height: 2.35rem;

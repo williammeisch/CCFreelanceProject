@@ -68,54 +68,6 @@ const portfolioData = {
         'Coordinated outreach events and passive pipeline programs with global HR and talent teams.',
       ],
     },
-    {
-      role: 'Sr. Digital Outreach Strategist',
-      organization: 'NuCerity International Inc.',
-      dates: '08/2016 – 08/2018',
-      summary:
-        'Advanced mission-driven partnership and outreach strategy to close market gaps and convert channels into measurable growth drivers.',
-      achievements: [
-        'Increased media engagement from 0.23% to 1.8% through targeted storytelling and outreach campaigns.',
-        'Developed brand and product messaging frameworks that improved emotional connection and loyalty.',
-        'Partnered with data teams to optimize campaign performance against business and impact goals.',
-      ],
-    },
-    {
-      role: 'Director of Digital Media Marketing',
-      organization: 'SMMI, Inc',
-      dates: '01/2015 – 08/2016',
-      summary:
-        'Directed digital growth strategy for top-tier brands with analytics-led execution and strategic partnership development.',
-      achievements: [
-        'Led strategy for 35 brands and 10 organizations, including 5 Fortune 500 companies.',
-        'Supported campaigns for brands including Mercedes-Benz and Domino’s with measurable growth outcomes.',
-        'Delivered strategic recommendations that reduced bounce rates by more than 30%.',
-      ],
-    },
-    {
-      role: 'Digital Marketing Specialist',
-      organization: 'Beringer Technology Group',
-      dates: '08/2014 – 01/2015',
-      summary:
-        'Delivered content and campaign strategy to improve awareness, lead quality, and conversion pathways.',
-      achievements: [
-        'Improved SEO rankings and increased lead generation through campaign optimization.',
-        'Coordinated campaign launches with sales and technical teams to improve alignment.',
-        'Strengthened digital funnel performance with targeted messaging updates.',
-      ],
-    },
-    {
-      role: 'Digital Marketing Specialist',
-      organization: 'CoreCard Software',
-      dates: '08/2013 – 08/2014',
-      summary:
-        'Expanded digital visibility and traffic through data-driven content, email, and social programs.',
-      achievements: [
-        'Increased social engagement by 400% and web traffic by 300%.',
-        'Aligned messaging with buyer journeys across channels for stronger lead quality.',
-        'Applied SEO/SEM, web analytics, and A/B testing to optimize performance.',
-      ],
-    },
   ],
   education: [
     'Arizona State University — Master’s Degree, Digital Audience Strategy and Consumer Behavior',
@@ -267,33 +219,36 @@ const setupCarousel = () => {
   const track = carousel.querySelector('[data-carousel-track]');
   const prevButton = carousel.querySelector('[data-carousel-prev]');
   const nextButton = carousel.querySelector('[data-carousel-next]');
-
-  if (!track) return;
+  const cards = track ? Array.from(track.querySelectorAll('.recommendation-card')) : [];
+  if (!track || cards.length === 0) return;
 
   const getScrollAmount = () => {
-    const firstCard = track.querySelector('.recommendation-card');
-    if (!firstCard) return track.clientWidth;
     const gap = Number.parseFloat(window.getComputedStyle(track).gap || '16');
-    return firstCard.getBoundingClientRect().width + gap;
+    return cards[0].getBoundingClientRect().width + gap;
   };
 
-  const updateButtons = () => {
-    const maxScrollLeft = track.scrollWidth - track.clientWidth - 2;
-    if (prevButton) prevButton.disabled = track.scrollLeft <= 1;
-    if (nextButton) nextButton.disabled = track.scrollLeft >= maxScrollLeft;
+  const getCurrentIndex = () => {
+    const amount = getScrollAmount();
+    if (!amount) return 0;
+    return Math.round(track.scrollLeft / amount) % cards.length;
+  };
+
+  const goToIndex = (index) => {
+    const amount = getScrollAmount();
+    track.scrollTo({ left: index * amount, behavior: 'smooth' });
   };
 
   prevButton?.addEventListener('click', () => {
-    track.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+    const currentIndex = getCurrentIndex();
+    const target = (currentIndex - 1 + cards.length) % cards.length;
+    goToIndex(target);
   });
 
   nextButton?.addEventListener('click', () => {
-    track.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+    const currentIndex = getCurrentIndex();
+    const target = (currentIndex + 1) % cards.length;
+    goToIndex(target);
   });
-
-  track.addEventListener('scroll', updateButtons, { passive: true });
-  window.addEventListener('resize', updateButtons);
-  updateButtons();
 };
 
 const setupExperienceDetails = () => {
