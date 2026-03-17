@@ -1,11 +1,35 @@
 const portfolioData = {
   expertise: [
-    { title: 'Strategic Partnerships', icon: '🤝', description: 'Industry alliances and partnership ecosystems that scale visibility and opportunity.' },
-    { title: 'Outreach & Digital Strategy', icon: '📡', description: 'Integrated outreach, social, and digital strategy tied to growth and engagement metrics.' },
-    { title: 'Brand Management', icon: '🏷️', description: 'Clear brand positioning and messaging that improves trust, reach, and conversion.' },
-    { title: 'CRM & Stakeholder Engagement', icon: '🧩', description: 'Relationship strategy that aligns internal and external stakeholders around shared outcomes.' },
-    { title: 'Contract & Program Execution', icon: '🗂️', description: 'Contract negotiation and execution discipline for high-impact, cross-functional initiatives.' },
-    { title: 'ESG & Community Impact', icon: '🌍', description: 'Partnership programs that connect social impact with workforce and business priorities.' },
+    {
+      title: 'Strategic Partnerships',
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 12l3 3 5-5"/><path d="M20 12a8 8 0 11-16 0 8 8 0 0116 0z"/></svg>',
+      description: 'Industry alliances and partnership ecosystems that scale visibility and opportunity.',
+    },
+    {
+      title: 'Corporate Outreach',
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/></svg>',
+      description: 'Integrated outreach strategy that aligns institutions, communities, and stakeholders.',
+    },
+    {
+      title: 'Sponsorship',
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1v22"/><path d="M17 5H9a3 3 0 000 6h6a3 3 0 010 6H7"/></svg>',
+      description: 'Sponsorship and activation strategy built for impact, ROI, and brand safety.',
+    },
+    {
+      title: 'Workforce',
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M20 8v6M23 11h-6"/></svg>',
+      description: 'Workforce pipeline strategy connecting outreach, education, and employer demand.',
+    },
+    {
+      title: 'Digital Audience',
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 010 20"/><path d="M12 2a15 15 0 000 20"/></svg>',
+      description: 'Digital audience strategy that improves engagement, reach, and conversion performance.',
+    },
+    {
+      title: 'Revenue & Growth',
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>',
+      description: 'Revenue-oriented growth planning that ties marketing execution to measurable outcomes.',
+    },
   ],
   experience: [
     {
@@ -69,84 +93,97 @@ const portfolioData = {
       ],
     },
     {
-      role: 'Digital Marketing Outreach Manager',
-      organization: 'Remax Real Estate Group',
-      dates: '03/2012 – 01/2015',
+      role: 'Digital Marketing Specialist',
+      organization: 'Beringer Technology Group',
+      dates: '08/2014 – 01/2015',
       summary:
-        'Built outreach and activation campaigns that increased awareness and engagement through performance-led brand planning.',
+        'Delivered content and campaign strategy to improve awareness, lead quality, and conversion pathways.',
       achievements: [
-        'Enhanced outreach pipeline and brand awareness by 56%.',
-        'Improved engagement by 15% through real-time campaign monitoring and optimization.',
-        'Expanded reach through partnerships with local businesses and influencers.',
+        'Improved SEO rankings and increased lead generation through campaign optimization.',
+        'Coordinated campaign launches with sales and technical teams to improve alignment.',
+        'Strengthened digital funnel performance with targeted messaging updates.',
       ],
     },
     {
-      role: 'Sr. Digital Market Brand Manager',
-      organization: 'KTJ LLC',
-      dates: '05/2010 – 01/2015',
+      role: 'Digital Marketing Specialist',
+      organization: 'CoreCard Software',
+      dates: '08/2013 – 08/2014',
       summary:
-        'Executed targeted social strategy and collaboration programs to drive traffic, engagement, and stronger market positioning.',
+        'Expanded digital visibility and traffic through data-driven content, email, and social programs.',
       achievements: [
-        'Increased website traffic by 125% over six months.',
-        'Negotiated 5+ social collaborations that improved engagement by 30%.',
-        'Developed buyer-persona strategy to sharpen targeted campaign execution.',
-      ],
-    },
-    {
-      role: 'Multi-Media Outreach Strategist',
-      organization: 'Houston Chronicle',
-      dates: '02/2010 – 03/2012',
-      summary:
-        'Managed cross-organization campaign communication and production workflows supporting audience growth and publishing performance.',
-      achievements: [
-        'Facilitated campaign collaboration across 5 organizations.',
-        'Increased monthly social and website clicks from 8,000 to over 15,000.',
-        'Directed production of a 70-page publication reaching 25,000 weekly readers.',
-      ],
-    },
-    {
-      role: 'Digital Media and Community Activation Specialist',
-      organization: 'Texas State University Bookstore',
-      dates: '08/2006 – 01/2010',
-      summary:
-        'Led events, digital campaigns, and performance analysis to increase student engagement and community activation reach.',
-      achievements: [
-        'Executed events and activations reaching 25,000+ students.',
-        'Drove digital campaigns for 25,000 participants with 10,000+ new followers.',
+        'Increased social engagement by 400% and web traffic by 300%.',
+        'Aligned messaging with buyer journeys across channels for stronger lead quality.',
         'Applied SEO/SEM, web analytics, and A/B testing to optimize performance.',
       ],
     },
   ],
-  resumePoints: [
+  education: [
     'Arizona State University — Master’s Degree, Digital Audience Strategy and Consumer Behavior',
     'Texas State University — Bachelor’s Degree, Advertising and Consumer Science',
-    'Certifications: Business Partnerships and Alliances; Alliances in Sports Marketing; Sports Marketing Essentials; Athlete Marketing Essentials: NIL Certification',
+  ],
+  certifications: [
+    'Business Partnerships and Alliances',
+    'Alliances in Sports Marketing',
+    'Sports Marketing Essentials',
+    'Athlete Marketing Essentials: NIL Certification',
   ],
   recommendations: [
-    { quote: 'Cornelia leads complex partnership portfolios with executive precision and converts strategy into measurable outcomes.', author: 'Executive Stakeholder', title: 'Defense Manufacturing Program Partner' },
-    { quote: 'She built high-credibility collaborations across sports, education, and community systems that accelerated talent pipelines.', author: 'Program Collaborator', title: 'Sponsorship & Outreach Leader' },
-    { quote: 'Her recruitment marketing strategy improved applications, candidate quality, and long-term brand relevance.', author: 'Global Talent Leader', title: 'HR & Talent Partnerships, Jacobs' },
-    { quote: 'Cornelia combines audience insight with disciplined execution—every campaign is accountable to clear KPIs.', author: 'Cross-Functional Partner', title: 'Global Outreach & Branding, Halliburton' },
-    { quote: 'She aligns stakeholders quickly and turns ambiguity into an actionable roadmap teams can execute against.', author: 'Corporate Partner', title: 'Community & Partnership Programs' },
-    { quote: 'From sponsorship design to activation, Cornelia protects brand integrity while delivering growth and trust.', author: 'Senior Marketing Partner', title: 'Brand & Sponsorship Strategy' },
-    { quote: 'Strategic, collaborative, and outcomes-first—exactly the leadership style needed in high-stakes initiatives.', author: 'Executive Advisor', title: 'Strategic Partnerships Council' },
+    {
+      quote: 'Cornelia leads complex partnership portfolios with executive precision and converts strategy into measurable outcomes.',
+      author: 'Executive Stakeholder',
+      title: 'Defense Manufacturing Program Partner',
+    },
+    {
+      quote: 'She built high-credibility collaborations across sports, education, and community systems that accelerated talent pipelines.',
+      author: 'Program Collaborator',
+      title: 'Sponsorship & Outreach Leader',
+    },
+    {
+      quote: 'Her recruitment marketing strategy improved applications, candidate quality, and long-term brand relevance.',
+      author: 'Global Talent Leader',
+      title: 'HR & Talent Partnerships, Jacobs',
+    },
+    {
+      quote: 'Cornelia combines audience insight with disciplined execution—every campaign is accountable to clear KPIs.',
+      author: 'Cross-Functional Partner',
+      title: 'Global Outreach & Branding, Halliburton',
+    },
+    {
+      quote: 'She aligns stakeholders quickly and turns ambiguity into an actionable roadmap teams can execute against.',
+      author: 'Corporate Partner',
+      title: 'Community & Partnership Programs',
+    },
+    {
+      quote: 'From sponsorship design to activation, Cornelia protects brand integrity while delivering growth and trust.',
+      author: 'Senior Marketing Partner',
+      title: 'Brand & Sponsorship Strategy',
+    },
+    {
+      quote: 'Strategic, collaborative, and outcomes-first—exactly the leadership style needed in high-stakes initiatives.',
+      author: 'Executive Advisor',
+      title: 'Strategic Partnerships Council',
+    },
   ],
 };
 
 const renderList = (items) => items.map((item) => `<li>${item}</li>`).join('');
 
-const expertiseGrid = document.getElementById('expertise-grid');
-if (expertiseGrid) {
+const renderExpertise = () => {
+  const expertiseGrid = document.getElementById('expertise-grid');
+  if (!expertiseGrid) return;
+
   expertiseGrid.innerHTML = portfolioData.expertise
     .map(
       ({ title, icon, description }) =>
         `<article class="capability-card"><div class="capability-icon" aria-hidden="true">${icon}</div><h3>${title}</h3><p>${description}</p></article>`
     )
     .join('');
-}
+};
 
-const experienceTimeline = document.getElementById('experience-timeline');
-if (experienceTimeline) {
+const renderExperience = () => {
+  const experienceTimeline = document.getElementById('experience-timeline');
+  if (!experienceTimeline) return;
+
   experienceTimeline.innerHTML = portfolioData.experience
     .map(
       ({ role, organization, dates, summary, achievements }) => `
@@ -168,15 +205,26 @@ if (experienceTimeline) {
       </article>`
     )
     .join('');
-}
+};
 
-const resumeList = document.getElementById('resume-points');
-if (resumeList) {
-  resumeList.innerHTML = renderList(portfolioData.resumePoints);
-}
+const renderEducation = () => {
+  const educationList = document.getElementById('education-list');
+  if (educationList) {
+    educationList.innerHTML = renderList(portfolioData.education);
+  }
 
-const recommendationTrack = document.getElementById('recommendations-track');
-if (recommendationTrack) {
+  const certificationList = document.getElementById('certification-list');
+  if (certificationList) {
+    certificationList.innerHTML = portfolioData.certifications
+      .map((item) => `<span class="cert-chip">${item}</span>`)
+      .join('');
+  }
+};
+
+const renderRecommendations = () => {
+  const recommendationTrack = document.getElementById('recommendations-track');
+  if (!recommendationTrack) return;
+
   recommendationTrack.innerHTML = portfolioData.recommendations
     .map(({ quote, author, title }, index) => {
       const theme = `theme-${(index % 3) + 1}`;
@@ -187,36 +235,40 @@ if (recommendationTrack) {
       </article>`;
     })
     .join('');
-}
+};
 
-const revealElements = document.querySelectorAll('.reveal');
-if ('IntersectionObserver' in window) {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.2 }
-  );
-  revealElements.forEach((element) => observer.observe(element));
-} else {
+const setupRevealAnimation = () => {
+  const revealElements = document.querySelectorAll('.reveal');
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    revealElements.forEach((element) => observer.observe(element));
+    return;
+  }
+
   revealElements.forEach((element) => element.classList.add('visible'));
-}
+};
 
-const yearElement = document.getElementById('year');
-if (yearElement) {
-  yearElement.textContent = new Date().getFullYear();
-}
+const setupCarousel = () => {
+  const carousel = document.querySelector('[data-carousel]');
+  if (!carousel) return;
 
-const carousel = document.querySelector('[data-carousel]');
-if (carousel) {
   const track = carousel.querySelector('[data-carousel-track]');
   const prevButton = carousel.querySelector('[data-carousel-prev]');
   const nextButton = carousel.querySelector('[data-carousel-next]');
+
+  if (!track) return;
 
   const getScrollAmount = () => {
     const firstCard = track.querySelector('.recommendation-card');
@@ -234,19 +286,24 @@ if (carousel) {
   prevButton?.addEventListener('click', () => {
     track.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
   });
+
   nextButton?.addEventListener('click', () => {
     track.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
   });
+
   track.addEventListener('scroll', updateButtons, { passive: true });
   window.addEventListener('resize', updateButtons);
   updateButtons();
-}
+};
 
-const experienceContainer = document.getElementById('experience-timeline');
-if (experienceContainer) {
+const setupExperienceDetails = () => {
+  const experienceContainer = document.getElementById('experience-timeline');
+  if (!experienceContainer) return;
+
   experienceContainer.addEventListener('click', (event) => {
     const button = event.target.closest('.detail-toggle');
     if (!button) return;
+
     const card = button.closest('.timeline-content');
     const panel = card?.querySelector('.detail-panel');
     if (!panel) return;
@@ -256,4 +313,19 @@ if (experienceContainer) {
     button.textContent = expanded ? 'Additional Details' : 'Hide Details';
     panel.hidden = expanded;
   });
-}
+};
+
+const setCurrentYear = () => {
+  const yearElement = document.getElementById('year');
+  if (!yearElement) return;
+  yearElement.textContent = new Date().getFullYear();
+};
+
+renderExpertise();
+renderExperience();
+renderEducation();
+renderRecommendations();
+setCurrentYear();
+setupRevealAnimation();
+setupCarousel();
+setupExperienceDetails();
