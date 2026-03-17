@@ -1,11 +1,11 @@
 const portfolioData = {
   expertise: [
-    { title: 'Strategic Partnerships', icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 12l3 3 5-5"/><path d="M20 12a8 8 0 11-16 0 8 8 0 0116 0z"/></svg>', description: 'Industry alliances and partnership ecosystems that scale visibility and opportunity.' },
-    { title: 'Corporate Outreach', icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/></svg>', description: 'Integrated outreach strategy that aligns institutions, communities, and stakeholders.' },
-    { title: 'Sponsorship', icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1v22"/><path d="M17 5H9a3 3 0 000 6h6a3 3 0 010 6H7"/></svg>', description: 'Sponsorship and activation strategy built for impact, ROI, and brand safety.' },
-    { title: 'Workforce', icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M20 8v6M23 11h-6"/></svg>', description: 'Workforce pipeline strategy connecting outreach, education, and employer demand.' },
-    { title: 'Digital Audience', icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 010 20"/><path d="M12 2a15 15 0 000 20"/></svg>', description: 'Digital audience strategy that improves engagement, reach, and conversion performance.' },
-    { title: 'Revenue & Growth', icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>', description: 'Revenue-oriented growth planning that ties marketing execution to measurable outcomes.' },
+    { title: 'Strategic Partnerships', icon: '🤝', description: 'Industry alliances and partnership ecosystems that scale visibility and opportunity.' },
+    { title: 'Outreach & Digital Strategy', icon: '📡', description: 'Integrated outreach, social, and digital strategy tied to growth and engagement metrics.' },
+    { title: 'Brand Management', icon: '🏷️', description: 'Clear brand positioning and messaging that improves trust, reach, and conversion.' },
+    { title: 'CRM & Stakeholder Engagement', icon: '🧩', description: 'Relationship strategy that aligns internal and external stakeholders around shared outcomes.' },
+    { title: 'Contract & Program Execution', icon: '🗂️', description: 'Contract negotiation and execution discipline for high-impact, cross-functional initiatives.' },
+    { title: 'ESG & Community Impact', icon: '🌍', description: 'Partnership programs that connect social impact with workforce and business priorities.' },
   ],
   experience: [
     {
@@ -117,15 +117,10 @@ const portfolioData = {
       ],
     },
   ],
-  education: [
+  resumePoints: [
     'Arizona State University — Master’s Degree, Digital Audience Strategy and Consumer Behavior',
     'Texas State University — Bachelor’s Degree, Advertising and Consumer Science',
-  ],
-  certifications: [
-    'Business Partnerships and Alliances',
-    'Alliances in Sports Marketing',
-    'Sports Marketing Essentials',
-    'Athlete Marketing Essentials: NIL Certification',
+    'Certifications: Business Partnerships and Alliances; Alliances in Sports Marketing; Sports Marketing Essentials; Athlete Marketing Essentials: NIL Certification',
   ],
   recommendations: [
     { quote: 'Cornelia leads complex partnership portfolios with executive precision and converts strategy into measurable outcomes.', author: 'Executive Stakeholder', title: 'Defense Manufacturing Program Partner' },
@@ -175,16 +170,9 @@ if (experienceTimeline) {
     .join('');
 }
 
-const educationList = document.getElementById('education-list');
-if (educationList) {
-  educationList.innerHTML = renderList(portfolioData.education);
-}
-
-const certificationList = document.getElementById('certification-list');
-if (certificationList) {
-  certificationList.innerHTML = portfolioData.certifications
-    .map((item) => `<span class="cert-chip">${item}</span>`)
-    .join('');
+const resumeList = document.getElementById('resume-points');
+if (resumeList) {
+  resumeList.innerHTML = renderList(portfolioData.resumePoints);
 }
 
 const recommendationTrack = document.getElementById('recommendations-track');
