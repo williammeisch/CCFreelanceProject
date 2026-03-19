@@ -129,6 +129,78 @@ const portfolioData = {
     'Sports Marketing Essentials',
     'Athlete Marketing Essentials: NIL Certification',
   ],
+  projects: [
+    {
+      title: 'Defense Workforce Partnership Activation',
+      image: 'https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=900&q=80',
+      link: 'https://www.navy.com/',
+      summary: 'Built cross-sector partnership programming supporting defense workforce awareness.',
+      achievements: ['Launched joint events across school and employer networks.', 'Improved outreach participation with targeted media playbooks.'],
+    },
+    {
+      title: 'Global Talent Brand Campaign',
+      image: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=80',
+      link: 'https://www.linkedin.com/',
+      summary: 'Scaled employer brand storytelling across global talent segments.',
+      achievements: ['Aligned creative themes to conversion-focused funnels.', 'Raised qualified applicant volume through channel optimization.'],
+    },
+    {
+      title: 'University Pipeline Collaboration',
+      image: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=900&q=80',
+      link: 'https://www.asu.edu/',
+      summary: 'Built education-to-employer partnership pathways for workforce pipeline growth.',
+      achievements: ['Created internship-ready curriculum touchpoints.', 'Expanded partner participation across multi-campus regions.'],
+    },
+    {
+      title: 'Sponsorship ROI Dashboard',
+      image: 'https://images.unsplash.com/photo-1551281044-8b8a3f97f6f4?auto=format&fit=crop&w=900&q=80',
+      link: 'https://lookerstudio.google.com/',
+      summary: 'Developed sponsorship measurement framework for executive reporting.',
+      achievements: ['Unified KPI scorecards across channels.', 'Improved attribution clarity for sponsorship renewals.'],
+    },
+    {
+      title: 'Community Activation Series',
+      image: 'https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=900&q=80',
+      link: 'https://www.wnba.com/',
+      summary: 'Designed activation experiences connecting community audiences with brands.',
+      achievements: ['Increased event engagement through partner co-promotion.', 'Standardized event playbooks for repeat execution.'],
+    },
+    {
+      title: 'Digital Audience Growth Sprint',
+      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=80',
+      link: 'https://analytics.google.com/',
+      summary: 'Implemented test-and-learn cycles to grow social and web audience performance.',
+      achievements: ['Improved CTR and retention with content iteration loops.', 'Reduced bounce with tighter landing-page messaging.'],
+    },
+    {
+      title: 'Corporate Outreach Toolkit',
+      image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80',
+      link: 'https://www.canva.com/',
+      summary: 'Created reusable outreach assets for partner-facing campaigns and pitches.',
+      achievements: ['Shortened campaign launch timelines.', 'Improved consistency of external-facing brand narrative.'],
+    },
+    {
+      title: 'Recruitment Media Optimization',
+      image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=80',
+      link: 'https://business.linkedin.com/talent-solutions',
+      summary: 'Refined paid and organic recruitment media to improve candidate quality.',
+      achievements: ['Lowered cost-per-qualified-application.', 'Raised campaign efficiency with audience segmentation.'],
+    },
+    {
+      title: 'Brand Messaging Refresh',
+      image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=900&q=80',
+      link: 'https://www.adobe.com/creativecloud.html',
+      summary: 'Reframed value proposition messaging for executive and candidate audiences.',
+      achievements: ['Improved clarity and consistency across touchpoints.', 'Increased partner confidence in campaign strategy.'],
+    },
+    {
+      title: 'Strategic Partnerships Playbook',
+      image: 'https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=900&q=80',
+      link: 'https://www.nascar.com/',
+      summary: 'Documented repeatable strategy for partnership sourcing, activation, and reporting.',
+      achievements: ['Reduced onboarding time for new collaborators.', 'Improved cross-team execution quality at scale.'],
+    },
+  ],
   recommendations: [
     { quote: 'Cornelia leads complex partnership portfolios with executive precision and converts strategy into measurable outcomes.', author: 'Executive Stakeholder', title: 'Defense Manufacturing Program Partner' },
     { quote: 'She built high-credibility collaborations across sports, education, and community systems that accelerated talent pipelines.', author: 'Program Collaborator', title: 'Sponsorship & Outreach Leader' },
@@ -182,6 +254,27 @@ const renderExperience = () => {
     .join('');
 
   experienceTimeline.innerHTML = `${primary}<div id="more-history-wrap" hidden>${additional}</div>`;
+};
+
+
+const renderProjects = () => {
+  const projectsGrid = document.getElementById('projects-grid');
+  if (!projectsGrid) return;
+
+  projectsGrid.innerHTML = portfolioData.projects
+    .map(
+      ({ title, image, link, summary, achievements }) => `
+      <article class="project-card reveal">
+        <img class="project-image" src="${image}" alt="${title}" loading="lazy" />
+        <div class="project-content">
+          <h3>${title}</h3>
+          <p>${summary}</p>
+          <ul>${renderList(achievements)}</ul>
+          <a class="project-link" href="${link}" target="_blank" rel="noopener noreferrer">Open Project</a>
+        </div>
+      </article>`
+    )
+    .join('');
 };
 
 const renderEducation = () => {
@@ -310,6 +403,7 @@ const setCurrentYear = () => {
 renderExpertise();
 renderExperience();
 renderEducation();
+renderProjects();
 setupRecommendationsCarousel();
 setCurrentYear();
 setupRevealAnimation();
