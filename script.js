@@ -143,7 +143,7 @@ const portfolioData = {
 const renderList = (items) => items.map((item) => `<li>${item}</li>`).join('');
 
 const renderExperienceItem = ({ role, organization, dates, summary, achievements }, extraClass = '') => `
-  <article class="timeline-item reveal ${extraClass}">
+  <article class="timeline-item ${extraClass}">
     <div class="timeline-marker" aria-hidden="true"></div>
     <div class="timeline-content">
       <div class="timeline-head">
