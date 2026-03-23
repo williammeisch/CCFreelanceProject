@@ -39,9 +39,8 @@ const portfolioData = {
       summary:
         'Led a 90M portfolio to advance outreach, education, and workforce initiatives tied to Navy/DoD awareness and long-term talent development.',
       achievements: [
-        'Built large-scale partnerships with MLB, WNBA, NCAA, NASCAR, universities, and technical schools for sponsorships, events, internships, and training programs.',
-        'Managed 25+ strategic partnerships and helped drive a 30% increase in workforce initiative awareness and engagement.',
-        'Executed multi-million-dollar philanthropic programs with tight controls across budgets, timelines, staffing, and risk.',
+        'Built large-scale partnerships with MLB, WNBA, NCAA, NASCAR, universities, and technical schools.',
+        'Managed 25+ strategic partnerships and helped drive a 30% increase in awareness and engagement.',
       ],
     },
     {
@@ -52,8 +51,7 @@ const portfolioData = {
         'Improved global attraction and sourcing performance through partnership-driven recruitment marketing and stronger employer brand strategy.',
       achievements: [
         'Boosted applications by 20% and reduced cost-per-hire by 15%.',
-        'Supported talent campaigns reaching 1.2M+ LinkedIn followers across business lines.',
-        'Built end-to-end qualified talent pipelines aligned to business demand and social impact goals.',
+        'Supported campaigns reaching 1.2M+ LinkedIn followers across business lines.',
       ],
     },
     {
@@ -63,59 +61,8 @@ const portfolioData = {
       summary:
         'Led global outreach attraction strategy across reputation platforms, social channels, sourcing, and inclusion initiatives.',
       achievements: [
-        'Improved Glassdoor/Indeed rating by 1.1% and added 100K+ followers via recruitment media strategy.',
-        'Drove diversity initiatives with sustained global representation goals and broad digital engagement.',
+        'Added 100K+ followers via recruitment media strategy.',
         'Coordinated outreach events and passive pipeline programs with global HR and talent teams.',
-      ],
-    },
-  ],
-  additionalExperience: [
-    {
-      role: 'Sr. Digital Outreach Strategist',
-      organization: 'NuCerity International Inc.',
-      dates: '08/2016 – 08/2018',
-      summary:
-        'Advanced mission-driven partnership and outreach strategy to close market gaps and convert channels into measurable growth drivers.',
-      achievements: [
-        'Increased media engagement from 0.23% to 1.8% through targeted storytelling and outreach campaigns.',
-        'Developed brand and product messaging frameworks that improved emotional connection and loyalty.',
-        'Partnered with data teams to optimize campaign performance against business and impact goals.',
-      ],
-    },
-    {
-      role: 'Director of Digital Media Marketing',
-      organization: 'SMMI, Inc',
-      dates: '01/2015 – 08/2016',
-      summary:
-        'Directed digital growth strategy for top-tier brands with analytics-led execution and strategic partnership development.',
-      achievements: [
-        'Led strategy for 35 brands and 10 organizations, including 5 Fortune 500 companies.',
-        'Supported campaigns for brands including Mercedes-Benz and Domino’s with measurable growth outcomes.',
-        'Delivered strategic recommendations that reduced bounce rates by more than 30%.',
-      ],
-    },
-    {
-      role: 'Digital Marketing Specialist',
-      organization: 'Beringer Technology Group',
-      dates: '08/2014 – 01/2015',
-      summary:
-        'Delivered content and campaign strategy to improve awareness, lead quality, and conversion pathways.',
-      achievements: [
-        'Improved SEO rankings and increased lead generation through campaign optimization.',
-        'Coordinated campaign launches with sales and technical teams to improve alignment.',
-        'Strengthened digital funnel performance with targeted messaging updates.',
-      ],
-    },
-    {
-      role: 'Digital Marketing Specialist',
-      organization: 'CoreCard Software',
-      dates: '08/2013 – 08/2014',
-      summary:
-        'Expanded digital visibility and traffic through data-driven content, email, and social programs.',
-      achievements: [
-        'Increased social engagement by 400% and web traffic by 300%.',
-        'Aligned messaging with buyer journeys across channels for stronger lead quality.',
-        'Applied SEO/SEM, web analytics, and A/B testing to optimize performance.',
       ],
     },
   ],
@@ -131,106 +78,71 @@ const portfolioData = {
   ],
   projects: [
     {
-      title: 'Defense Workforce Partnership Activation',
-      image: 'https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=900&q=80',
-      link: 'https://www.navy.com/',
-      summary: 'Built cross-sector partnership programming supporting defense workforce awareness.',
-      achievements: ['Launched joint events across school and employer networks.', 'Improved outreach participation with targeted media playbooks.'],
+      title: 'Connecticut Sun Partners with BlueForge Alliance to Promote BuildSubmarines.com',
+      image: 'https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=900&q=80',
+      link: 'https://buildsubmarines.com/',
+      summary:
+        'Secured and managed a multi-year, seven-figure partnership with the Connecticut Sun and the WNBA to expand access to STEM education and careers in advanced manufacturing for women. The partnership spanned sponsorship, brand integration, live events, and scholarship funding, creating sustained pathways for visibility, engagement, and career opportunity while aligning mission-driven impact with a high-profile sports platform.',
+      achievements: [
+        'Managed seven-figure, multi-year sponsorship strategy and execution.',
+        'Connected mission-driven STEM and workforce outcomes to major sports visibility.',
+      ],
     },
     {
-      title: 'Global Talent Brand Campaign',
-      image: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=80',
-      link: 'https://www.linkedin.com/',
-      summary: 'Scaled employer brand storytelling across global talent segments.',
-      achievements: ['Aligned creative themes to conversion-focused funnels.', 'Raised qualified applicant volume through channel optimization.'],
+      title: 'Full Throttle for the Future: RFK Racing and BuildSubmarines.com Forge New Partnership',
+      image: 'https://images.unsplash.com/photo-1514316454349-750a7fd3da3a?auto=format&fit=crop&w=900&q=80',
+      link: 'https://buildsubmarines.com/',
+      summary:
+        'Supported strategic management of multi-year partnership between BuildSubmarines.com and RFK Racing that leveraged NASCAR to raise awareness of careers within the Submarine Industrial Base. By reaching a highly engaged fan base, the partnership promoted stable, well-paying manufacturing jobs that support the U.S. Navy’s next-generation submarines and strengthen the national manufacturing workforce.',
+      achievements: [
+        'Leveraged NASCAR platform to broaden manufacturing career awareness.',
+        'Aligned campaign outcomes to national workforce and defense priorities.',
+      ],
     },
     {
-      title: 'University Pipeline Collaboration',
+      title: 'MLB and MiLB Partnership Promoting BuildSubmarines.com Workforce Recruitment',
+      image: 'https://images.unsplash.com/photo-1471295253337-3ceaaedca402?auto=format&fit=crop&w=900&q=80',
+      link: 'https://buildsubmarines.com/',
+      summary:
+        'Drove a multi-year, multi-million-dollar partnership with MLB and MiLB to promote BuildSubmarines.com, a platform built to recruit more than 10,000 skilled manufacturing workers each year for the U.S. Navy’s submarine fleet. The partnership launched with the 2024 MLB Opening Day and includes promotions across MLB Jewel Events such as All-Star Week, Speedway Classic, and the Postseason, as well as activations in 40 Minor League ballparks.',
+      achievements: [
+        'Launched integrated activations across MLB major events and 40 MiLB ballparks.',
+        'Supported recruitment messaging at national scale for 10,000+ annual workforce targets.',
+      ],
+    },
+    {
+      title: 'Speaking to Red Sox Scholars About Career Exploration Programs for Red Sox Foundation',
       image: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=900&q=80',
-      link: 'https://www.asu.edu/',
-      summary: 'Built education-to-employer partnership pathways for workforce pipeline growth.',
-      achievements: ['Created internship-ready curriculum touchpoints.', 'Expanded partner participation across multi-campus regions.'],
+      link: 'https://www.redsoxfoundation.org/',
+      summary:
+        'Serving on the Red Sox Scholarship Foundation panel, supporting scholarship review and conversations around access and opportunity. I am able to participate in career exploration programs, speaking directly with students about career paths and practical guidance for navigating early professional decisions.',
+      achievements: [
+        'Contributed to scholarship review and access-oriented education conversations.',
+        'Delivered practical early-career guidance to student cohorts.',
+      ],
     },
     {
-      title: 'Sponsorship ROI Dashboard',
-      image: 'https://images.unsplash.com/photo-1551281044-8b8a3f97f6f4?auto=format&fit=crop&w=900&q=80',
-      link: 'https://lookerstudio.google.com/',
-      summary: 'Developed sponsorship measurement framework for executive reporting.',
-      achievements: ['Unified KPI scorecards across channels.', 'Improved attribution clarity for sponsorship renewals.'],
-    },
-    {
-      title: 'Community Activation Series',
-      image: 'https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=900&q=80',
-      link: 'https://www.wnba.com/',
-      summary: 'Designed activation experiences connecting community audiences with brands.',
-      achievements: ['Increased event engagement through partner co-promotion.', 'Standardized event playbooks for repeat execution.'],
-    },
-    {
-      title: 'Digital Audience Growth Sprint',
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=80',
-      link: 'https://analytics.google.com/',
-      summary: 'Implemented test-and-learn cycles to grow social and web audience performance.',
-      achievements: ['Improved CTR and retention with content iteration loops.', 'Reduced bounce with tighter landing-page messaging.'],
-    },
-    {
-      title: 'Corporate Outreach Toolkit',
-      image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80',
-      link: 'https://www.canva.com/',
-      summary: 'Created reusable outreach assets for partner-facing campaigns and pitches.',
-      achievements: ['Shortened campaign launch timelines.', 'Improved consistency of external-facing brand narrative.'],
-    },
-    {
-      title: 'Recruitment Media Optimization',
-      image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=80',
-      link: 'https://business.linkedin.com/talent-solutions',
-      summary: 'Refined paid and organic recruitment media to improve candidate quality.',
-      achievements: ['Lowered cost-per-qualified-application.', 'Raised campaign efficiency with audience segmentation.'],
-    },
-    {
-      title: 'Brand Messaging Refresh',
-      image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=900&q=80',
-      link: 'https://www.adobe.com/creativecloud.html',
-      summary: 'Reframed value proposition messaging for executive and candidate audiences.',
-      achievements: ['Improved clarity and consistency across touchpoints.', 'Increased partner confidence in campaign strategy.'],
-    },
-    {
-      title: 'Strategic Partnerships Playbook',
-      image: 'https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=900&q=80',
-      link: 'https://www.nascar.com/',
-      summary: 'Documented repeatable strategy for partnership sourcing, activation, and reporting.',
-      achievements: ['Reduced onboarding time for new collaborators.', 'Improved cross-team execution quality at scale.'],
+      title: 'BuildSubmarines.com Goes Head to Head: Two Activations Competing for Best Partner Activation of 2025',
+      image: 'https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=900&q=80',
+      link: 'https://buildsubmarines.com/',
+      summary:
+        'Out of 16 partnership activations, both of my lead supported activations took the top two spots. One delivered lasting impact through a community park restoration, while the other drove high-energy engagement with a T-shirt cannon moment. Different executions, same mission, and a clear win for the brand and community.',
+      achievements: [
+        'Secured top two positions among 16 partnership activations.',
+        'Balanced community legacy impact with high-energy fan engagement outcomes.',
+      ],
     },
   ],
   recommendations: [
-    { quote: 'Cornelia leads complex partnership portfolios with executive precision and converts strategy into measurable outcomes.', author: 'Executive Stakeholder', title: 'Defense Manufacturing Program Partner' },
-    { quote: 'She built high-credibility collaborations across sports, education, and community systems that accelerated talent pipelines.', author: 'Program Collaborator', title: 'Sponsorship & Outreach Leader' },
-    { quote: 'Her recruitment marketing strategy improved applications, candidate quality, and long-term brand relevance.', author: 'Global Talent Leader', title: 'HR & Talent Partnerships, Jacobs' },
-    { quote: 'Cornelia combines audience insight with disciplined execution—every campaign is accountable to clear KPIs.', author: 'Cross-Functional Partner', title: 'Global Outreach & Branding, Halliburton' },
-    { quote: 'She aligns stakeholders quickly and turns ambiguity into an actionable roadmap teams can execute against.', author: 'Corporate Partner', title: 'Community & Partnership Programs' },
-    { quote: 'From sponsorship design to activation, Cornelia protects brand integrity while delivering growth and trust.', author: 'Senior Marketing Partner', title: 'Brand & Sponsorship Strategy' },
-    { quote: 'Strategic, collaborative, and outcomes-first—exactly the leadership style needed in high-stakes initiatives.', author: 'Executive Advisor', title: 'Strategic Partnerships Council' },
+    { quote: 'Cornelius leads complex partnership portfolios with executive precision and converts strategy into measurable outcomes.', author: 'Executive Stakeholder', title: 'Defense Manufacturing Program Partner' },
+    { quote: 'He built high-credibility collaborations across sports, education, and community systems that accelerated talent pipelines.', author: 'Program Collaborator', title: 'Sponsorship & Outreach Leader' },
+    { quote: 'His recruitment marketing strategy improved applications, candidate quality, and long-term brand relevance.', author: 'Global Talent Leader', title: 'HR & Talent Partnerships, Jacobs' },
+    { quote: 'Cornelius combines audience insight with disciplined execution—every campaign is accountable to clear KPIs.', author: 'Cross-Functional Partner', title: 'Global Outreach & Branding, Halliburton' },
+    { quote: 'He aligns stakeholders quickly and turns ambiguity into an actionable roadmap teams can execute against.', author: 'Corporate Partner', title: 'Community & Partnership Programs' },
   ],
 };
 
 const renderList = (items) => items.map((item) => `<li>${item}</li>`).join('');
-
-const renderExperienceItem = ({ role, organization, dates, summary, achievements }, extraClass = '') => `
-  <article class="timeline-item ${extraClass}">
-    <div class="timeline-marker" aria-hidden="true"></div>
-    <div class="timeline-content">
-      <div class="timeline-head">
-        <div>
-          <h3>${role}</h3>
-          <p class="meta">${organization} • ${dates}</p>
-        </div>
-        <button class="detail-toggle" type="button" aria-expanded="false">Additional Details</button>
-      </div>
-      <p>${summary}</p>
-      <div class="detail-panel" hidden>
-        <ul>${renderList(achievements)}</ul>
-      </div>
-    </div>
-  </article>`;
 
 const renderExpertise = () => {
   const expertiseGrid = document.getElementById('expertise-grid');
@@ -248,14 +160,25 @@ const renderExperience = () => {
   const experienceTimeline = document.getElementById('experience-timeline');
   if (!experienceTimeline) return;
 
-  const primary = portfolioData.experience.map((item) => renderExperienceItem(item)).join('');
-  const additional = portfolioData.additionalExperience
-    .map((item) => renderExperienceItem(item, 'more-history-item'))
+  experienceTimeline.innerHTML = portfolioData.experience
+    .map(
+      ({ role, organization, dates, summary, achievements }) => `
+      <article class="timeline-item reveal">
+        <div class="timeline-marker" aria-hidden="true"></div>
+        <div class="timeline-content">
+          <div class="timeline-head">
+            <div>
+              <h3>${role}</h3>
+              <p class="meta">${organization} • ${dates}</p>
+            </div>
+          </div>
+          <p>${summary}</p>
+          <ul>${renderList(achievements)}</ul>
+        </div>
+      </article>`
+    )
     .join('');
-
-  experienceTimeline.innerHTML = `${primary}<div id="more-history-wrap" hidden>${additional}</div>`;
 };
-
 
 const renderProjects = () => {
   const projectsGrid = document.getElementById('projects-grid');
@@ -270,7 +193,7 @@ const renderProjects = () => {
           <h3>${title}</h3>
           <p>${summary}</p>
           <ul>${renderList(achievements)}</ul>
-          <a class="project-link" href="${link}" target="_blank" rel="noopener noreferrer">Open Project</a>
+          <a class="project-link" href="${link}" target="_blank" rel="noopener noreferrer">View Project Details</a>
         </div>
       </article>`
     )
@@ -299,8 +222,14 @@ const setupRecommendationsCarousel = () => {
   if (!track || recommendations.length < 3) return;
 
   let centerIndex = 1;
+  let activeButton = 'next';
 
   const cardTheme = (index) => `theme-${(index % 3) + 1}`;
+
+  const updateButtonStates = () => {
+    prevButton?.classList.toggle('is-active', activeButton === 'prev');
+    nextButton?.classList.toggle('is-active', activeButton === 'next');
+  };
 
   const renderCarousel = () => {
     const total = recommendations.length;
@@ -322,14 +251,18 @@ const setupRecommendationsCarousel = () => {
           </article>`;
       })
       .join('');
+
+    updateButtonStates();
   };
 
   prevButton?.addEventListener('click', () => {
+    activeButton = 'prev';
     centerIndex = (centerIndex - 1 + recommendations.length) % recommendations.length;
     renderCarousel();
   });
 
   nextButton?.addEventListener('click', () => {
+    activeButton = 'next';
     centerIndex = (centerIndex + 1) % recommendations.length;
     renderCarousel();
   });
@@ -360,40 +293,6 @@ const setupRevealAnimation = () => {
   revealElements.forEach((element) => element.classList.add('visible'));
 };
 
-const setupExperienceDetails = () => {
-  const experienceContainer = document.getElementById('experience-timeline');
-  if (!experienceContainer) return;
-
-  experienceContainer.addEventListener('click', (event) => {
-    const button = event.target.closest('.detail-toggle');
-    if (!button) return;
-
-    const card = button.closest('.timeline-content');
-    const panel = card?.querySelector('.detail-panel');
-    if (!panel) return;
-
-    const expanded = button.getAttribute('aria-expanded') === 'true';
-    button.setAttribute('aria-expanded', String(!expanded));
-    button.textContent = expanded ? 'Additional Details' : 'Hide Details';
-    panel.hidden = expanded;
-  });
-};
-
-const setupExperienceHistoryToggle = () => {
-  const toggleButton = document.getElementById('history-toggle');
-  const moreWrap = document.getElementById('more-history-wrap');
-  if (!toggleButton || !moreWrap) return;
-
-  toggleButton.addEventListener('click', () => {
-    const expanded = toggleButton.getAttribute('aria-expanded') === 'true';
-    toggleButton.setAttribute('aria-expanded', String(!expanded));
-    moreWrap.hidden = expanded;
-    toggleButton.innerHTML = expanded
-      ? '<span class="history-arrow" aria-hidden="true">↓</span>Click for More Job History'
-      : '<span class="history-arrow" aria-hidden="true">↑</span>Hide Additional Job History';
-  });
-};
-
 const setCurrentYear = () => {
   const yearElement = document.getElementById('year');
   if (!yearElement) return;
@@ -407,5 +306,3 @@ renderProjects();
 setupRecommendationsCarousel();
 setCurrentYear();
 setupRevealAnimation();
-setupExperienceDetails();
-setupExperienceHistoryToggle();
