@@ -83,69 +83,50 @@ const setupRevealAnimation = () => {
   revealElements.forEach((element) => element.classList.add('visible'));
 };
 
-
 const setupProjectsToggle = () => {
-  const grid = document.getElementById('projects-grid');
+  const extraWrapper = document.getElementById('projects-extra');
   const toggle = document.getElementById('projects-toggle');
-  if (!grid || !toggle) return;
-
-  const extraCards = Array.from(grid.querySelectorAll('.extra-project'));
-  if (extraCards.length === 0) {
-    toggle.hidden = true;
-    return;
-  }
+  if (!extraWrapper || !toggle) return;
 
   const icon = toggle.querySelector('.projects-toggle-icon');
   const text = toggle.querySelector('.projects-toggle-text');
 
-  const animateHeight = (expand) => {
-    const start = grid.getBoundingClientRect().height;
-    extraCards.forEach((card) => {
-      card.hidden = expand ? false : true;
-      if (expand) card.classList.add('visible');
-    });
-    if (!expand) {
-      extraCards.forEach((card) => (card.hidden = false));
-    }
-    const end = (() => {
-      if (expand) return grid.getBoundingClientRect().height;
-      extraCards.forEach((card) => (card.hidden = true));
-      return grid.getBoundingClientRect().height;
-    })();
-
-    if (!expand) extraCards.forEach((card) => (card.hidden = false));
-    grid.style.height = `${start}px`;
-    grid.style.overflow = 'hidden';
-    grid.style.transition = 'height .32s ease';
-    requestAnimationFrame(() => {
-      grid.style.height = `${end}px`;
-    });
-    const onDone = () => {
-      grid.style.height = '';
-      grid.style.overflow = '';
-      grid.style.transition = '';
-      if (!expand) extraCards.forEach((card) => (card.hidden = true));
-      grid.removeEventListener('transitionend', onDone);
-    };
-    grid.addEventListener('transitionend', onDone);
+  const setCollapsed = () => {
+    extraWrapper.style.maxHeight = '0px';
+    extraWrapper.classList.remove('is-expanded');
+    extraWrapper.setAttribute('aria-hidden', 'true');
+    toggle.setAttribute('aria-expanded', 'false');
+    if (icon) icon.textContent = '↓';
+    if (text) text.textContent = 'Show More';
   };
+
+  const setExpanded = () => {
+    extraWrapper.classList.add('is-expanded');
+    extraWrapper.setAttribute('aria-hidden', 'false');
+    extraWrapper.style.maxHeight = `${extraWrapper.scrollHeight}px`;
+    toggle.setAttribute('aria-expanded', 'true');
+    if (icon) icon.textContent = '↑';
+    if (text) text.textContent = 'Show Less';
+  };
+
+  setCollapsed();
 
   toggle.addEventListener('click', () => {
     const expanded = toggle.getAttribute('aria-expanded') === 'true';
-    const next = !expanded;
-    toggle.setAttribute('aria-expanded', String(next));
-    if (icon) icon.textContent = next ? '↑' : '↓';
-    if (text) text.textContent = next ? 'Show Less' : 'Show More';
-    animateHeight(next);
+    if (expanded) {
+      setCollapsed();
+      return;
+    }
+    setExpanded();
   });
-};
 
-const setCurrentYear = () => {
-  const yearElement = document.getElementById('year');
-  if (yearElement) yearElement.textContent = new Date().getFullYear();
+  window.addEventListener('resize', () => {
+    if (toggle.getAttribute('aria-expanded') === 'true') {
+      extraWrapper.style.maxHeight = `${extraWrapper.scrollHeight}px`;
+    }
+  });
 };
 
 setupRecommendationsCarousel();
 setupRevealAnimation();
 setupProjectsToggle();
-setCurrentYear();
