@@ -42,7 +42,7 @@
           </p>
           <div class="hero-cta">
             <a class="btn btn-primary" href="#experience">View Experience</a>
-            <a class="btn btn-secondary" href="#contact">Connect</a>
+            <button class="btn btn-secondary" id="open-contact-modal" type="button">Connect</button>
           </div>
         </div>
       </section>
@@ -95,7 +95,7 @@
                     <div class="timeline-head">
                       <div>
                         <h3>Regional Partnership Director – Corporate Partnerships and Outreach Strategy</h3>
-                        <p class="meta">BlueForge Alliance • 05/2023 – 12/2025</p>
+                        <p class="meta">BlueForge Alliance • May 2023 – Dec 2025</p>
                       </div>
                     </div>
                     <p>Led a 90M portfolio to advance outreach, education, and workforce initiatives tied to Navy/DoD awareness and long-term talent development, including large partnership ecosystems that increased awareness and engagement by 30%.</p>
@@ -108,7 +108,7 @@
                     <div class="timeline-head">
                       <div>
                         <h3>Global Manager, Recruitment Marketing and Strategic Partnerships</h3>
-                        <p class="meta">Jacobs • 01/2022 – 03/2023</p>
+                        <p class="meta">Jacobs • Jan 2022 – Mar 2023</p>
                       </div>
                     </div>
                     <p>Improved global attraction and sourcing performance through partnership-driven recruitment marketing and stronger employer brand strategy, boosting applications by 20% while reducing cost-per-hire by 15%.</p>
@@ -121,7 +121,7 @@
                     <div class="timeline-head">
                       <div>
                         <h3>Sr. Strategist for Global Outreach Attraction and Branding</h3>
-                        <p class="meta">Halliburton • 08/2018 – 06/2021</p>
+                        <p class="meta">Halliburton • Aug 2018 – Jun 2021</p>
                       </div>
                     </div>
                     <p>Led global outreach attraction strategy across reputation platforms, social channels, sourcing, and inclusion initiatives, adding more than 100K followers while strengthening passive talent pipeline programs with global HR teams.</p>
@@ -202,6 +202,8 @@
             </div>
             <button class="carousel-btn is-active" aria-label="Next recommendation" data-carousel-next>→</button>
           </div>
+          <p class="carousel-mobile-hint reveal">Tap arrows to view more recommendations</p>
+          <div class="carousel-dots reveal" data-carousel-dots aria-label="Recommendation pages"></div>
         </div>
       </section>
 
@@ -316,6 +318,27 @@
         </a>
       </div>
     </footer>
+
+    <div class="contact-modal-overlay" id="contact-modal-overlay" hidden>
+      <div
+        class="contact-modal"
+        id="contact-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="contact-modal-title"
+      >
+        <button class="contact-modal-close" id="close-contact-modal" type="button" aria-label="Close contact dialog">✕</button>
+        <h2 id="contact-modal-title">Contact</h2>
+        <div class="contact-modal-row">
+          <span>Email</span>
+          <a href="mailto:CorneliaCifelli@gmail.com">CorneliaCifelli@gmail.com</a>
+        </div>
+        <div class="contact-modal-row">
+          <span>LinkedIn</span>
+          <a href="https://linkedin.com/in/corneliacifelli" target="_blank" rel="noopener noreferrer">View Profile</a>
+        </div>
+      </div>
+    </div>
 
     <script src="script.js"></script>
   </body>
