@@ -291,28 +291,6 @@ ul { margin: 0; padding-left: 1.05rem; color: var(--muted); }
   border-color: #f3f4f4;
   box-shadow: 0 0 0 2px rgba(255,255,255,.2) inset;
 }
-.carousel-mobile-hint {
-  display: none;
-  margin: .2rem 0 .35rem;
-  text-align: center;
-  color: #d4d8e0;
-  font-size: .88rem;
-}
-.carousel-dots {
-  display: none;
-  justify-content: center;
-  gap: .42rem;
-}
-.carousel-dot {
-  width: .5rem;
-  height: .5rem;
-  border-radius: 50%;
-  background: rgba(255,255,255,.4);
-  border: 0;
-  padding: 0;
-}
-.carousel-dot.active { background: #ffffff; }
-
 .site-footer {
   background: #111111;
   color: #f3f4f4;
@@ -422,6 +400,7 @@ ul { margin: 0; padding-left: 1.05rem; color: var(--muted); }
   z-index: 90;
   padding: 1rem;
 }
+.contact-modal-overlay[hidden] { display: none; }
 .contact-modal {
   width: min(460px, 94vw);
   background: #ffffff;
@@ -498,8 +477,6 @@ ul { margin: 0; padding-left: 1.05rem; color: var(--muted); }
     justify-content: center;
     align-items: center;
   }
-  .carousel-mobile-hint { display: block; }
-  .carousel-dots { display: flex; }
   .carousel-viewport::before,
   .carousel-viewport::after { display: none; }
   .carousel-track { grid-template-columns: 1fr; }

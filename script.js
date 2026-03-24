@@ -20,13 +20,6 @@ const setupRecommendationsCarousel = () => {
   if (sourceCards.length < 3) return;
 
   let centerIndex = 1;
-  const dotsContainer = carousel.parentElement?.querySelector('[data-carousel-dots]');
-
-  if (dotsContainer) {
-    dotsContainer.innerHTML = sourceCards
-      .map((_, index) => `<button class="carousel-dot" type="button" aria-label="Go to recommendation ${index + 1}" data-dot-index="${index}"></button>`)
-      .join('');
-  }
 
   const render = () => {
     const total = sourceCards.length;
@@ -44,12 +37,6 @@ const setupRecommendationsCarousel = () => {
         return `<article class="recommendation-card ${item.theme} ${pos}" aria-label="${item.label}">${item.html}</article>`;
       })
       .join('');
-
-    if (dotsContainer) {
-      dotsContainer.querySelectorAll('.carousel-dot').forEach((dot, index) => {
-        dot.classList.toggle('active', index === centerIndex);
-      });
-    }
   };
 
   const setActive = (button) => {
@@ -66,17 +53,6 @@ const setupRecommendationsCarousel = () => {
   nextButton.addEventListener('click', () => {
     centerIndex = (centerIndex + 1) % sourceCards.length;
     setActive(nextButton);
-    render();
-  });
-
-  dotsContainer?.addEventListener('click', (event) => {
-    const target = event.target;
-    if (!(target instanceof HTMLElement)) return;
-    const dot = target.closest('.carousel-dot');
-    if (!dot) return;
-    const nextIndex = Number(dot.getAttribute('data-dot-index'));
-    if (Number.isNaN(nextIndex)) return;
-    centerIndex = nextIndex;
     render();
   });
 
