@@ -7,7 +7,7 @@
   --line: #d8d8d8;
   --navy: #1f2a44;
   --black: #2c2c2c;
-  --accent: #612d53;
+  --accent: #d0d3d8;
   --shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
 }
 
@@ -50,8 +50,8 @@ body {
   color: var(--accent);
 }
 .section-dark .eyebrow,
-.site-footer .eyebrow { color: #ceb7c8; }
-.hero .eyebrow { color: #f5d8ee; text-shadow: 0 1px 1px rgba(0,0,0,.35); }
+.site-footer .eyebrow { color: #d7d9dd; }
+.hero .eyebrow { color: #f2f4f8; text-shadow: 0 1px 1px rgba(0,0,0,.35); }
 h1, h2, h3 { margin-top: 0; line-height: 1.2; }
 h1 { font-family: "Merriweather", Georgia, serif; }
 h2, h3, .nav-links a, .section-title { font-family: "Plus Jakarta Sans", "Inter", system-ui, sans-serif; }
@@ -93,6 +93,13 @@ p { margin-top: 0; color: var(--muted); }
 .education-card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; box-shadow: var(--shadow); }
 .about-copy { padding: 1.2rem; }
 .subsection-title { margin: 1.45rem 0 .7rem; }
+.experience-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .8rem;
+  flex-wrap: wrap;
+}
 
 .expertise-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: .85rem; margin-top: .25rem; }
 .capability-card { background: #fbfbfb; border: 1px solid var(--line); border-radius: 12px; padding: .95rem; min-height: 156px; }
@@ -204,10 +211,10 @@ ul { margin: 0; padding-left: 1.05rem; color: var(--muted); }
   font-size: .75rem;
   line-height: 1.1;
 }
-.school-item.asu { border-left: 4px solid #8c1d40; }
-.school-item.asu .school-mark { background: #ffc627; color: #5c1030; }
-.school-item.txst { border-left: 4px solid #501214; }
-.school-item.txst .school-mark { background: #d7b56d; color: #501214; }
+.school-item.asu { border-left: 4px solid #8e939a; }
+.school-item.asu .school-mark { background: #d4d7dc; color: #444b55; }
+.school-item.txst { border-left: 4px solid #7f848b; }
+.school-item.txst .school-mark { background: #e0e2e6; color: #3f454e; }
 
 
 .carousel { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: .8rem; }
