@@ -127,8 +127,12 @@ const setupProjectsToggle = () => {
   });
 };
 
+// Project media behavior:
+// - Each .project-card owns its own image data in data-project-images (JSON array).
+// - No shared/merged image pool is used.
+// - Modal only shows images from the selected card.
 const setupProjectMediaGalleries = () => {
-  const galleries = Array.from(document.querySelectorAll('[data-project-gallery]'));
+  const cards = Array.from(document.querySelectorAll('.project-card[data-project-images]'));
   const lightbox = document.getElementById('project-lightbox');
   const lightboxImage = document.getElementById('project-lightbox-image');
   const lightboxCaption = document.getElementById('project-lightbox-caption');
@@ -136,7 +140,7 @@ const setupProjectMediaGalleries = () => {
   const lightboxPrev = document.getElementById('project-lightbox-prev');
   const lightboxNext = document.getElementById('project-lightbox-next');
 
-  if (!galleries.length || !lightbox || !lightboxImage || !lightboxCaption || !lightboxClose || !lightboxPrev || !lightboxNext) {
+  if (!cards.length || !lightbox || !lightboxImage || !lightboxCaption || !lightboxClose || !lightboxPrev || !lightboxNext) {
     return;
   }
 
@@ -186,19 +190,35 @@ const setupProjectMediaGalleries = () => {
     updateLightboxView();
   };
 
-  galleries.forEach((gallery) => {
+  cards.forEach((card) => {
+    // Project card rendering source:
+    // image objects are taken only from this card's own data-project-images.
+    const gallery = card.querySelector('[data-project-gallery]');
+    if (!gallery) return;
+
+    let images = [];
+    try {
+      images = JSON.parse(card.dataset.projectImages || '[]');
+    } catch (_error) {
+      images = [];
+    }
+    if (!Array.isArray(images) || images.length === 0) return;
+
     const items = Array.from(gallery.querySelectorAll('.project-media-item'));
     if (!items.length) return;
 
-    const images = items.map((item) => ({
-      src: item.dataset.gallerySrc || '',
-      alt: item.dataset.galleryAlt || '',
-      caption: item.dataset.galleryCaption || '',
-    }));
-
-    if (images.length > 2) {
-      gallery.classList.add(images.length === 3 ? 'three-images' : images.length === 4 ? 'four-images' : 'multi-images');
-    }
+    const mediaClass =
+      images.length === 1
+        ? 'one-image'
+        : images.length === 2
+          ? 'two-images'
+          : images.length === 3
+            ? 'three-images'
+            : images.length === 4
+              ? 'four-images'
+              : 'multi-images';
+    gallery.classList.remove('one-image', 'two-images', 'three-images', 'four-images', 'multi-images');
+    gallery.classList.add(mediaClass);
 
     items.forEach((item, index) => {
       const moreCount = images.length - 4;
@@ -217,13 +237,12 @@ const setupProjectMediaGalleries = () => {
       });
     });
 
-    const parentCard = gallery.closest('.project-card');
-    const target = gallery.dataset.cardLink;
-    const external = gallery.dataset.cardLinkExternal === 'true';
-    if (parentCard && target) {
-      parentCard.setAttribute('role', 'link');
-      parentCard.setAttribute('tabindex', '0');
-      parentCard.setAttribute('aria-label', 'Open project link');
+    const target = card.dataset.cardLink;
+    const external = card.dataset.cardLinkExternal === 'true';
+    if (target) {
+      card.setAttribute('role', 'link');
+      card.setAttribute('tabindex', '0');
+      card.setAttribute('aria-label', 'Open project link');
 
       const openCardTarget = () => {
         if (external) {
@@ -233,12 +252,12 @@ const setupProjectMediaGalleries = () => {
         window.open(target, '_blank', 'noopener');
       };
 
-      parentCard.addEventListener('click', (event) => {
+      card.addEventListener('click', (event) => {
         if (event.target.closest('.project-media-item')) return;
         openCardTarget();
       });
 
-      parentCard.addEventListener('keydown', (event) => {
+      card.addEventListener('keydown', (event) => {
         if (event.key === 'Enter' || event.key === ' ') {
           event.preventDefault();
           openCardTarget();
@@ -247,6 +266,7 @@ const setupProjectMediaGalleries = () => {
     }
   });
 
+  // Modal / lightbox controls for selected project's images only.
   lightboxClose.addEventListener('click', closeLightbox);
   lightboxPrev.addEventListener('click', goPrev);
   lightboxNext.addEventListener('click', goNext);

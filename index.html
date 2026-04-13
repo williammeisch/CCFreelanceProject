@@ -251,9 +251,10 @@
 
           <!-- ===== PROJECT CARDS WITH CONTEXT + REAL-WORLD VISUALS ===== -->
           <div class="projects-grid" id="projects-grid">
-            <article class="project-card reveal">
-              <div class="project-media one-image" data-project-gallery data-card-link="https://sun.wnba.com/news/connecticut-sun-partners-with-blueforge-alliance-to-promote-buildsubmarines-com" data-card-link-external="true">
-                <button class="project-media-item" type="button" data-gallery-src="images/ConnecticutSun-Thumbnail.jpeg" data-gallery-alt="Connecticut Sun and BlueForge Alliance partnership" data-gallery-caption="Connecticut Sun x BlueForge Alliance campaign visibility." aria-label="Open project gallery image 1">
+            <!-- Each project owns its own image array via data-project-images. -->
+            <article class="project-card reveal" data-card-link="https://sun.wnba.com/news/connecticut-sun-partners-with-blueforge-alliance-to-promote-buildsubmarines-com" data-card-link-external="true" data-project-images='[{"src":"images/ConnecticutSun-Thumbnail.jpeg","alt":"Connecticut Sun and BlueForge Alliance partnership","caption":"Connecticut Sun x BlueForge Alliance campaign visibility."}]'>
+              <div class="project-media one-image" data-project-gallery>
+                <button class="project-media-item" type="button" aria-label="Open project gallery image 1">
                   <img class="project-image" src="images/ConnecticutSun-Thumbnail.jpeg" alt="Connecticut Sun and BlueForge Alliance partnership" loading="lazy" />
                 </button>
               </div>
@@ -263,13 +264,10 @@
               </div>
             </article>
 
-            <article class="project-card reveal">
-              <div class="project-media two-images" data-project-gallery data-card-link="https://www.buildsubmarines.com/newsroom/rfk-racing-and-blueforge-alliance-join-forces" data-card-link-external="true">
-                <button class="project-media-item" type="button" data-gallery-src="images/FullThrottle-Thumbnail.jpeg" data-gallery-alt="RFK Racing partnership activation" data-gallery-caption="RFK Racing x BuildSubmarines.com partnership reveal." aria-label="Open project gallery image 1">
+            <article class="project-card reveal" data-card-link="https://www.buildsubmarines.com/newsroom/rfk-racing-and-blueforge-alliance-join-forces" data-card-link-external="true" data-project-images='[{"src":"images/FullThrottle-Thumbnail.jpeg","alt":"RFK Racing partnership activation","caption":"RFK Racing x BuildSubmarines.com partnership reveal."}]'>
+              <div class="project-media one-image" data-project-gallery>
+                <button class="project-media-item" type="button" aria-label="Open project gallery image 1">
                   <img class="project-image" src="images/FullThrottle-Thumbnail.jpeg" alt="RFK Racing partnership activation" loading="lazy" />
-                </button>
-                <button class="project-media-item" type="button" data-gallery-src="images/RedSoxNASCAR-Thumbnail.jpeg" data-gallery-alt="BuildSubmarines NASCAR collaboration visual" data-gallery-caption="Cross-platform motorsports collaboration execution." aria-label="Open project gallery image 2">
-                  <img class="project-image" src="images/RedSoxNASCAR-Thumbnail.jpeg" alt="BuildSubmarines NASCAR collaboration visual" loading="lazy" />
                 </button>
               </div>
               <div class="project-content">
@@ -278,16 +276,10 @@
               </div>
             </article>
 
-            <article class="project-card reveal">
-              <div class="project-media three-images" data-project-gallery data-card-link="https://www.mlb.com/press-release/press-release-blueforge-alliance-announces-mlb-and-milb-partnership-topromote-buildsubmarines-com-and-recruit-skilled-workers" data-card-link-external="true">
-                <button class="project-media-item" type="button" data-gallery-src="images/MLBMiLB-Thumbnail.jpeg" data-gallery-alt="MLB and MiLB recruitment partnership" data-gallery-caption="MLB and MiLB workforce recruitment launch." aria-label="Open project gallery image 1">
+            <article class="project-card reveal" data-card-link="https://www.mlb.com/press-release/press-release-blueforge-alliance-announces-mlb-and-milb-partnership-topromote-buildsubmarines-com-and-recruit-skilled-workers" data-card-link-external="true" data-project-images='[{"src":"images/MLBMiLB-Thumbnail.jpeg","alt":"MLB and MiLB recruitment partnership","caption":"MLB and MiLB workforce recruitment launch."}]'>
+              <div class="project-media one-image" data-project-gallery>
+                <button class="project-media-item" type="button" aria-label="Open project gallery image 1">
                   <img class="project-image" src="images/MLBMiLB-Thumbnail.jpeg" alt="MLB and MiLB recruitment partnership" loading="lazy" />
-                </button>
-                <button class="project-media-item" type="button" data-gallery-src="images/SpeedwayClassic-Thumbnail.jpeg" data-gallery-alt="MLB Speedway Classic activation" data-gallery-caption="Event activation at MLB Speedway Classic." aria-label="Open project gallery image 2">
-                  <img class="project-image" src="images/SpeedwayClassic-Thumbnail.jpeg" alt="MLB Speedway Classic activation" loading="lazy" />
-                </button>
-                <button class="project-media-item" type="button" data-gallery-src="images/STEM-Thumbnail.jpeg" data-gallery-alt="STEM activation at sports venue" data-gallery-caption="STEM fan engagement and workforce visibility." aria-label="Open project gallery image 3">
-                  <img class="project-image" src="images/STEM-Thumbnail.jpeg" alt="STEM activation at sports venue" loading="lazy" />
                 </button>
               </div>
               <div class="project-content">
@@ -296,9 +288,9 @@
               </div>
             </article>
 
-            <article class="project-card reveal">
-              <div class="project-media one-image" data-project-gallery data-card-link="https://www.linkedin.com/feed/update/urn:li:activity:7265121710092251136/" data-card-link-external="true">
-                <button class="project-media-item" type="button" data-gallery-src="images/CareerExploration-Thumbnail.jpeg" data-gallery-alt="Career exploration panel with students" data-gallery-caption="Red Sox Scholars career exploration panel." aria-label="Open project gallery image 1">
+            <article class="project-card reveal" data-card-link="https://www.linkedin.com/feed/update/urn:li:activity:7265121710092251136/" data-card-link-external="true" data-project-images='[{"src":"images/CareerExploration-Thumbnail.jpeg","alt":"Career exploration panel with students","caption":"Red Sox Scholars career exploration panel."}]'>
+              <div class="project-media one-image" data-project-gallery>
+                <button class="project-media-item" type="button" aria-label="Open project gallery image 1">
                   <img class="project-image" src="images/CareerExploration-Thumbnail.jpeg" alt="Career exploration panel with students" loading="lazy" />
                 </button>
               </div>
@@ -311,13 +303,10 @@
 
           <div class="projects-extra" id="projects-extra" aria-hidden="true">
             <div class="projects-grid projects-grid-extra">
-              <article class="project-card reveal">
-                <div class="project-media two-images" data-project-gallery data-card-link="https://web.witcontests.com/sun/bracket/best-partner-activations-of-20-250923" data-card-link-external="true">
-                  <button class="project-media-item" type="button" data-gallery-src="images/HeadtoHead-Thumbnail.jpeg" data-gallery-alt="Partner activation awards" data-gallery-caption="Top two ranked partnership activations." aria-label="Open project gallery image 1">
+              <article class="project-card reveal" data-card-link="https://web.witcontests.com/sun/bracket/best-partner-activations-of-20-250923" data-card-link-external="true" data-project-images='[{"src":"images/HeadtoHead-Thumbnail.jpeg","alt":"Partner activation awards","caption":"Top two ranked partnership activations."}]'>
+                <div class="project-media one-image" data-project-gallery>
+                  <button class="project-media-item" type="button" aria-label="Open project gallery image 1">
                     <img class="project-image" src="images/HeadtoHead-Thumbnail.jpeg" alt="Partner activation awards" loading="lazy" />
-                  </button>
-                  <button class="project-media-item" type="button" data-gallery-src="images/WashingtonPark-Thumbnail.jpeg" data-gallery-alt="Community park restoration activation" data-gallery-caption="Community-first activation with long-term impact." aria-label="Open project gallery image 2">
-                    <img class="project-image" src="images/WashingtonPark-Thumbnail.jpeg" alt="Community park restoration activation" loading="lazy" />
                   </button>
                 </div>
                 <div class="project-content">
@@ -326,19 +315,10 @@
                 </div>
               </article>
 
-              <article class="project-card reveal">
-                <div class="project-media four-images" data-project-gallery data-card-link="images/RedSoxNASCAR-Thumbnail.jpeg">
-                  <button class="project-media-item" type="button" data-gallery-src="images/RedSoxNASCAR-Thumbnail.jpeg" data-gallery-alt="BuildSubmarines MLB NASCAR collaboration" data-gallery-caption="Cross-sport audience expansion collaboration." aria-label="Open project gallery image 1">
+              <article class="project-card reveal" data-card-link="images/RedSoxNASCAR-Thumbnail.jpeg" data-project-images='[{"src":"images/RedSoxNASCAR-Thumbnail.jpeg","alt":"BuildSubmarines MLB NASCAR collaboration","caption":"Cross-sport audience expansion collaboration."}]'>
+                <div class="project-media one-image" data-project-gallery>
+                  <button class="project-media-item" type="button" aria-label="Open project gallery image 1">
                     <img class="project-image" src="images/RedSoxNASCAR-Thumbnail.jpeg" alt="BuildSubmarines MLB NASCAR collaboration" loading="lazy" />
-                  </button>
-                  <button class="project-media-item" type="button" data-gallery-src="images/MLBMiLB-Thumbnail.jpeg" data-gallery-alt="MLB collaboration asset" data-gallery-caption="MLB promotion driving workforce visibility." aria-label="Open project gallery image 2">
-                    <img class="project-image" src="images/MLBMiLB-Thumbnail.jpeg" alt="MLB collaboration asset" loading="lazy" />
-                  </button>
-                  <button class="project-media-item" type="button" data-gallery-src="images/FullThrottle-Thumbnail.jpeg" data-gallery-alt="NASCAR collaboration asset" data-gallery-caption="NASCAR activation and campaign alignment." aria-label="Open project gallery image 3">
-                    <img class="project-image" src="images/FullThrottle-Thumbnail.jpeg" alt="NASCAR collaboration asset" loading="lazy" />
-                  </button>
-                  <button class="project-media-item" type="button" data-gallery-src="images/ConnecticutSun-Thumbnail.jpeg" data-gallery-alt="WNBA collaboration asset" data-gallery-caption="WNBA visibility extension across platforms." aria-label="Open project gallery image 4">
-                    <img class="project-image" src="images/ConnecticutSun-Thumbnail.jpeg" alt="WNBA collaboration asset" loading="lazy" />
                   </button>
                 </div>
                 <div class="project-content">
@@ -347,16 +327,10 @@
                 </div>
               </article>
 
-              <article class="project-card reveal">
-                <div class="project-media three-images" data-project-gallery data-card-link="https://sun.wnba.com/news/connecticut-sun-and-buildsubmarines-com-revitalize-washington-park-basketball-courts" data-card-link-external="true">
-                  <button class="project-media-item" type="button" data-gallery-src="images/WashingtonPark-Thumbnail.jpeg" data-gallery-alt="Washington Park court revitalization" data-gallery-caption="Community court revitalization launch event." aria-label="Open project gallery image 1">
+              <article class="project-card reveal" data-card-link="https://sun.wnba.com/news/connecticut-sun-and-buildsubmarines-com-revitalize-washington-park-basketball-courts" data-card-link-external="true" data-project-images='[{"src":"images/WashingtonPark-Thumbnail.jpeg","alt":"Washington Park court revitalization","caption":"Community court revitalization launch event."}]'>
+                <div class="project-media one-image" data-project-gallery>
+                  <button class="project-media-item" type="button" aria-label="Open project gallery image 1">
                     <img class="project-image" src="images/WashingtonPark-Thumbnail.jpeg" alt="Washington Park court revitalization" loading="lazy" />
-                  </button>
-                  <button class="project-media-item" type="button" data-gallery-src="images/ConnecticutSun-Thumbnail.jpeg" data-gallery-alt="Connecticut Sun community event" data-gallery-caption="Connecticut Sun-led community engagement." aria-label="Open project gallery image 2">
-                    <img class="project-image" src="images/ConnecticutSun-Thumbnail.jpeg" alt="Connecticut Sun community event" loading="lazy" />
-                  </button>
-                  <button class="project-media-item" type="button" data-gallery-src="images/STEM-Thumbnail.jpeg" data-gallery-alt="Community STEM activity" data-gallery-caption="Youth development and STEM access moments." aria-label="Open project gallery image 3">
-                    <img class="project-image" src="images/STEM-Thumbnail.jpeg" alt="Community STEM activity" loading="lazy" />
                   </button>
                 </div>
                 <div class="project-content">
@@ -365,13 +339,10 @@
                 </div>
               </article>
 
-              <article class="project-card reveal">
-                <div class="project-media two-images" data-project-gallery data-card-link="images/SpeedwayClassic-Thumbnail.jpeg">
-                  <button class="project-media-item" type="button" data-gallery-src="images/SpeedwayClassic-Thumbnail.jpeg" data-gallery-alt="MLB Speedway Classic activation" data-gallery-caption="MLB Speedway Classic founding partner activation." aria-label="Open project gallery image 1">
+              <article class="project-card reveal" data-card-link="images/SpeedwayClassic-Thumbnail.jpeg" data-project-images='[{"src":"images/SpeedwayClassic-Thumbnail.jpeg","alt":"MLB Speedway Classic activation","caption":"MLB Speedway Classic founding partner activation."}]'>
+                <div class="project-media one-image" data-project-gallery>
+                  <button class="project-media-item" type="button" aria-label="Open project gallery image 1">
                     <img class="project-image" src="images/SpeedwayClassic-Thumbnail.jpeg" alt="MLB Speedway Classic activation" loading="lazy" />
-                  </button>
-                  <button class="project-media-item" type="button" data-gallery-src="images/MLBMiLB-Thumbnail.jpeg" data-gallery-alt="MLB promotional support" data-gallery-caption="Support activities tied to MLB event rollout." aria-label="Open project gallery image 2">
-                    <img class="project-image" src="images/MLBMiLB-Thumbnail.jpeg" alt="MLB promotional support" loading="lazy" />
                   </button>
                 </div>
                 <div class="project-content">
@@ -380,16 +351,10 @@
                 </div>
               </article>
 
-              <article class="project-card reveal">
-                <div class="project-media three-images" data-project-gallery data-card-link="https://sun.wnba.com/news/stem-back-to-school-night-presented-by-buildsubmarines-com-recap" data-card-link-external="true">
-                  <button class="project-media-item" type="button" data-gallery-src="images/STEM-Thumbnail.jpeg" data-gallery-alt="STEM Back to School Night" data-gallery-caption="Hands-on STEM activities and fan participation." aria-label="Open project gallery image 1">
+              <article class="project-card reveal" data-card-link="https://sun.wnba.com/news/stem-back-to-school-night-presented-by-buildsubmarines-com-recap" data-card-link-external="true" data-project-images='[{"src":"images/STEM-Thumbnail.jpeg","alt":"STEM Back to School Night","caption":"Hands-on STEM activities and fan participation."}]'>
+                <div class="project-media one-image" data-project-gallery>
+                  <button class="project-media-item" type="button" aria-label="Open project gallery image 1">
                     <img class="project-image" src="images/STEM-Thumbnail.jpeg" alt="STEM Back to School Night" loading="lazy" />
-                  </button>
-                  <button class="project-media-item" type="button" data-gallery-src="images/ConnecticutSun-Thumbnail.jpeg" data-gallery-alt="Connecticut Sun event support" data-gallery-caption="WNBA venue activation and brand integration." aria-label="Open project gallery image 2">
-                    <img class="project-image" src="images/ConnecticutSun-Thumbnail.jpeg" alt="Connecticut Sun event support" loading="lazy" />
-                  </button>
-                  <button class="project-media-item" type="button" data-gallery-src="images/CareerExploration-Thumbnail.jpeg" data-gallery-alt="Career exploration tie-in" data-gallery-caption="Career pathway storytelling for local youth." aria-label="Open project gallery image 3">
-                    <img class="project-image" src="images/CareerExploration-Thumbnail.jpeg" alt="Career exploration tie-in" loading="lazy" />
                   </button>
                 </div>
                 <div class="project-content">
@@ -398,13 +363,10 @@
                 </div>
               </article>
 
-              <article class="project-card reveal">
-                <div class="project-media two-images" data-project-gallery data-card-link="https://sun.wnba.com/news/the-connecticut-sun-announces-buildsubmarines-com-partnership-for-2025-season" data-card-link-external="true">
-                  <button class="project-media-item" type="button" data-gallery-src="images/CSPartnership-Thumbnail.jpeg" data-gallery-alt="Connecticut Sun partnership renewal" data-gallery-caption="Partnership renewal announcement for 2025 season." aria-label="Open project gallery image 1">
+              <article class="project-card reveal" data-card-link="https://sun.wnba.com/news/the-connecticut-sun-announces-buildsubmarines-com-partnership-for-2025-season" data-card-link-external="true" data-project-images='[{"src":"images/CSPartnership-Thumbnail.jpeg","alt":"Connecticut Sun partnership renewal","caption":"Partnership renewal announcement for 2025 season."}]'>
+                <div class="project-media one-image" data-project-gallery>
+                  <button class="project-media-item" type="button" aria-label="Open project gallery image 1">
                     <img class="project-image" src="images/CSPartnership-Thumbnail.jpeg" alt="Connecticut Sun partnership renewal" loading="lazy" />
-                  </button>
-                  <button class="project-media-item" type="button" data-gallery-src="images/ConnecticutSun-Thumbnail.jpeg" data-gallery-alt="Connecticut Sun partnership campaign" data-gallery-caption="Continued campaign integrations and outcomes." aria-label="Open project gallery image 2">
-                    <img class="project-image" src="images/ConnecticutSun-Thumbnail.jpeg" alt="Connecticut Sun partnership campaign" loading="lazy" />
                   </button>
                 </div>
                 <div class="project-content">
