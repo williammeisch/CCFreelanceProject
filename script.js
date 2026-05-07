@@ -221,6 +221,21 @@ const setupProjectMediaGalleries = () => {
     }
   });
 
+  // Modal / lightbox controls for selected project's images only.
+  lightboxClose.addEventListener('click', closeLightbox);
+  lightboxPrev.addEventListener('click', goPrev);
+  lightboxNext.addEventListener('click', goNext);
+
+  lightbox.addEventListener('click', (event) => {
+    if (event.target === lightbox) closeLightbox();
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (lightbox.hidden) return;
+    if (event.key === 'Escape') closeLightbox();
+    if (event.key === 'ArrowRight') goNext();
+    if (event.key === 'ArrowLeft') goPrev();
+  });
 };
 
 const setupContactModal = () => {
