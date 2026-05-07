@@ -133,62 +133,7 @@ const setupProjectsToggle = () => {
 // - Modal only shows images from the selected card.
 const setupProjectMediaGalleries = () => {
   const cards = Array.from(document.querySelectorAll('.project-card[data-project-images]'));
-  const lightbox = document.getElementById('project-lightbox');
-  const lightboxImage = document.getElementById('project-lightbox-image');
-  const lightboxCaption = document.getElementById('project-lightbox-caption');
-  const lightboxClose = document.getElementById('project-lightbox-close');
-  const lightboxPrev = document.getElementById('project-lightbox-prev');
-  const lightboxNext = document.getElementById('project-lightbox-next');
-
-  if (!cards.length || !lightbox || !lightboxImage || !lightboxCaption || !lightboxClose || !lightboxPrev || !lightboxNext) {
-    return;
-  }
-
-  let currentGallery = [];
-  let currentIndex = 0;
-  let previousFocus = null;
-
-  const updateLightboxView = () => {
-    const image = currentGallery[currentIndex];
-    if (!image) return;
-    lightboxImage.src = image.src;
-    lightboxImage.alt = image.alt || '';
-    lightboxCaption.textContent = image.caption || '';
-    const single = currentGallery.length <= 1;
-    lightboxPrev.disabled = single;
-    lightboxNext.disabled = single;
-  };
-
-  const openLightbox = (galleryImages, startIndex, triggerEl) => {
-    previousFocus = triggerEl || document.activeElement;
-    currentGallery = galleryImages;
-    currentIndex = startIndex;
-    lightbox.hidden = false;
-    document.body.style.overflow = 'hidden';
-    updateLightboxView();
-    lightboxClose.focus();
-  };
-
-  const closeLightbox = () => {
-    lightbox.hidden = true;
-    lightboxImage.src = '';
-    lightboxImage.alt = '';
-    lightboxCaption.textContent = '';
-    document.body.style.overflow = '';
-    if (previousFocus instanceof HTMLElement) previousFocus.focus();
-  };
-
-  const goNext = () => {
-    if (currentGallery.length <= 1) return;
-    currentIndex = (currentIndex + 1) % currentGallery.length;
-    updateLightboxView();
-  };
-
-  const goPrev = () => {
-    if (currentGallery.length <= 1) return;
-    currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
-    updateLightboxView();
-  };
+  if (!cards.length) return;
 
   cards.forEach((card) => {
     // Project card rendering source:
@@ -204,38 +149,48 @@ const setupProjectMediaGalleries = () => {
     }
     if (!Array.isArray(images) || images.length === 0) return;
 
-    const items = Array.from(gallery.querySelectorAll('.project-media-item'));
-    if (!items.length) return;
+    const imageEl = gallery.querySelector('.project-image');
+    if (!imageEl) return;
+    let currentIndex = 0;
+    imageEl.src = images[0].src;
+    imageEl.alt = images[0].alt || imageEl.alt;
 
-    const mediaClass =
-      images.length === 1
-        ? 'one-image'
-        : images.length === 2
-          ? 'two-images'
-          : images.length === 3
-            ? 'three-images'
-            : images.length === 4
-              ? 'four-images'
-              : 'multi-images';
-    gallery.classList.remove('one-image', 'two-images', 'three-images', 'four-images', 'multi-images');
-    gallery.classList.add(mediaClass);
+    if (images.length > 1) {
+      const prevButton = document.createElement('button');
+      prevButton.type = 'button';
+      prevButton.className = 'project-carousel-arrow prev';
+      prevButton.setAttribute('aria-label', 'Previous project image');
+      prevButton.textContent = '←';
 
-    items.forEach((item, index) => {
-      const moreCount = images.length - 4;
-      if (index === 3 && moreCount > 0) {
-        item.classList.add('is-overflow');
-        item.dataset.moreLabel = `+${moreCount} more`;
-      }
-      if (index > 3 && images.length > 4) {
-        item.hidden = true;
-      }
+      const nextButton = document.createElement('button');
+      nextButton.type = 'button';
+      nextButton.className = 'project-carousel-arrow next';
+      nextButton.setAttribute('aria-label', 'Next project image');
+      nextButton.textContent = '→';
 
-      item.addEventListener('click', (event) => {
+      const updateImage = () => {
+        const selected = images[currentIndex];
+        imageEl.src = selected.src;
+        imageEl.alt = selected.alt || imageEl.alt;
+      };
+
+      prevButton.addEventListener('click', (event) => {
         event.preventDefault();
         event.stopPropagation();
-        openLightbox(images, index, item);
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        updateImage();
       });
-    });
+
+      nextButton.addEventListener('click', (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        currentIndex = (currentIndex + 1) % images.length;
+        updateImage();
+      });
+
+      gallery.appendChild(prevButton);
+      gallery.appendChild(nextButton);
+    }
 
     const target = card.dataset.cardLink;
     const external = card.dataset.cardLinkExternal === 'true';
