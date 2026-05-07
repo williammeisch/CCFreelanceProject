@@ -134,6 +134,22 @@ const setupProjectsToggle = () => {
 const setupProjectMediaGalleries = () => {
   const cards = Array.from(document.querySelectorAll('.project-card[data-project-images]'));
   if (!cards.length) return;
+  const projectImageMap = {
+    'https://sun.wnba.com/news/connecticut-sun-partners-with-blueforge-alliance-to-promote-buildsubmarines-com': [
+      { src: 'images/ConnecticutSun-Thumbnail.jpeg', alt: 'Connecticut Sun and BlueForge Alliance partnership' },
+      { src: 'https://picsum.photos/seed/cornelia-sun-1/1200/900', alt: 'Connecticut Sun activation placeholder image 1' },
+      { src: 'https://picsum.photos/seed/cornelia-sun-2/1200/900', alt: 'Connecticut Sun activation placeholder image 2' },
+    ],
+    'https://www.buildsubmarines.com/newsroom/rfk-racing-and-blueforge-alliance-join-forces': [
+      { src: 'images/FullThrottle-Thumbnail.jpeg', alt: 'RFK Racing partnership activation' },
+      { src: 'https://picsum.photos/seed/cornelia-rfk-1/1200/900', alt: 'RFK collaboration placeholder image 1' },
+      { src: 'https://picsum.photos/seed/cornelia-rfk-2/1200/900', alt: 'RFK collaboration placeholder image 2' },
+    ],
+    'images/RedSoxNASCAR-Thumbnail.jpeg': [
+      { src: 'images/RedSoxNASCAR-Thumbnail.jpeg', alt: 'BuildSubmarines MLB NASCAR collaboration' },
+      { src: 'https://picsum.photos/seed/cornelia-nascar-1/1200/900', alt: 'NASCAR collaboration placeholder image 1' },
+    ],
+  };
 
   cards.forEach((card) => {
     // Project card rendering source:
@@ -148,6 +164,10 @@ const setupProjectMediaGalleries = () => {
       images = [];
     }
     if (!Array.isArray(images) || images.length === 0) return;
+    const mappedImages = projectImageMap[card.dataset.cardLink];
+    if (Array.isArray(mappedImages) && mappedImages.length > 0) {
+      images = mappedImages;
+    }
 
     const imageEl = gallery.querySelector('.project-image');
     if (!imageEl) return;
@@ -208,7 +228,7 @@ const setupProjectMediaGalleries = () => {
       };
 
       card.addEventListener('click', (event) => {
-        if (event.target.closest('.project-media-item')) return;
+        if (event.target.closest('.project-media-item') || event.target.closest('.project-carousel-arrow')) return;
         openCardTarget();
       });
 
@@ -221,21 +241,6 @@ const setupProjectMediaGalleries = () => {
     }
   });
 
-  // Modal / lightbox controls for selected project's images only.
-  lightboxClose.addEventListener('click', closeLightbox);
-  lightboxPrev.addEventListener('click', goPrev);
-  lightboxNext.addEventListener('click', goNext);
-
-  lightbox.addEventListener('click', (event) => {
-    if (event.target === lightbox) closeLightbox();
-  });
-
-  document.addEventListener('keydown', (event) => {
-    if (lightbox.hidden) return;
-    if (event.key === 'Escape') closeLightbox();
-    if (event.key === 'ArrowRight') goNext();
-    if (event.key === 'ArrowLeft') goPrev();
-  });
 };
 
 const setupContactModal = () => {
