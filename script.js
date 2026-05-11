@@ -145,9 +145,45 @@ const setupProjectMediaGalleries = () => {
       { src: 'https://picsum.photos/seed/cornelia-rfk-1/1200/900', alt: 'RFK collaboration placeholder image 1' },
       { src: 'https://picsum.photos/seed/cornelia-rfk-2/1200/900', alt: 'RFK collaboration placeholder image 2' },
     ],
+    'https://www.mlb.com/press-release/press-release-blueforge-alliance-announces-mlb-and-milb-partnership-topromote-buildsubmarines-com-and-recruit-skilled-workers': [
+      { src: 'images/MLBMiLB-Thumbnail.jpeg', alt: 'MLB and MiLB recruitment partnership' },
+      { src: 'https://picsum.photos/seed/cornelia-mlbmilb-1/1200/900', alt: 'MLB MiLB placeholder image 1' },
+      { src: 'https://picsum.photos/seed/cornelia-mlbmilb-2/1200/900', alt: 'MLB MiLB placeholder image 2' },
+    ],
+    'https://www.linkedin.com/feed/update/urn:li:activity:7265121710092251136/': [
+      { src: 'images/CareerExploration-Thumbnail.jpeg', alt: 'Career exploration panel with students' },
+      { src: 'https://picsum.photos/seed/cornelia-redsox-1/1200/900', alt: 'Red Sox scholars placeholder image 1' },
+      { src: 'https://picsum.photos/seed/cornelia-redsox-2/1200/900', alt: 'Red Sox scholars placeholder image 2' },
+    ],
+    'https://web.witcontests.com/sun/bracket/best-partner-activations-of-20-250923': [
+      { src: 'images/HeadtoHead-Thumbnail.jpeg', alt: 'Partner activation awards' },
+      { src: 'https://picsum.photos/seed/cornelia-headtohead-1/1200/900', alt: 'Partner activation placeholder image 1' },
+      { src: 'https://picsum.photos/seed/cornelia-headtohead-2/1200/900', alt: 'Partner activation placeholder image 2' },
+    ],
     'images/RedSoxNASCAR-Thumbnail.jpeg': [
       { src: 'images/RedSoxNASCAR-Thumbnail.jpeg', alt: 'BuildSubmarines MLB NASCAR collaboration' },
       { src: 'https://picsum.photos/seed/cornelia-nascar-1/1200/900', alt: 'NASCAR collaboration placeholder image 1' },
+      { src: 'https://picsum.photos/seed/cornelia-nascar-2/1200/900', alt: 'NASCAR collaboration placeholder image 2' },
+    ],
+    'https://sun.wnba.com/news/connecticut-sun-and-buildsubmarines-com-revitalize-washington-park-basketball-courts': [
+      { src: 'images/WashingtonPark-Thumbnail.jpeg', alt: 'Washington Park court revitalization' },
+      { src: 'https://picsum.photos/seed/cornelia-washingtonpark-1/1200/900', alt: 'Washington Park placeholder image 1' },
+      { src: 'https://picsum.photos/seed/cornelia-washingtonpark-2/1200/900', alt: 'Washington Park placeholder image 2' },
+    ],
+    'images/SpeedwayClassic-Thumbnail.jpeg': [
+      { src: 'images/SpeedwayClassic-Thumbnail.jpeg', alt: 'MLB Speedway Classic activation' },
+      { src: 'https://picsum.photos/seed/cornelia-speedway-1/1200/900', alt: 'Speedway classic placeholder image 1' },
+      { src: 'https://picsum.photos/seed/cornelia-speedway-2/1200/900', alt: 'Speedway classic placeholder image 2' },
+    ],
+    'https://sun.wnba.com/news/stem-back-to-school-night-presented-by-buildsubmarines-com-recap': [
+      { src: 'images/STEM-Thumbnail.jpeg', alt: 'STEM Back to School Night' },
+      { src: 'https://picsum.photos/seed/cornelia-stem-1/1200/900', alt: 'STEM placeholder image 1' },
+      { src: 'https://picsum.photos/seed/cornelia-stem-2/1200/900', alt: 'STEM placeholder image 2' },
+    ],
+    'https://sun.wnba.com/news/the-connecticut-sun-announces-buildsubmarines-com-partnership-for-2025-season': [
+      { src: 'images/CSPartnership-Thumbnail.jpeg', alt: 'Connecticut Sun partnership renewal' },
+      { src: 'https://picsum.photos/seed/cornelia-cspartnership-1/1200/900', alt: 'Connecticut Sun partnership placeholder image 1' },
+      { src: 'https://picsum.photos/seed/cornelia-cspartnership-2/1200/900', alt: 'Connecticut Sun partnership placeholder image 2' },
     ],
   };
 
