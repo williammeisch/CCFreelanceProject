@@ -468,6 +468,10 @@ ul { margin: 0; padding-left: 1.05rem; color: var(--muted); }
 .project-carousel-arrow.prev { left: .85rem; }
 .project-carousel-arrow.next { right: .85rem; }
 .project-carousel-arrow:hover { background: rgba(17, 26, 40, .72); }
+.project-carousel-arrow:disabled {
+  opacity: .45;
+  cursor: default;
+}
 
 .projects-toggle-wrap { display: flex; justify-content: center; margin-top: 1rem; }
 .projects-toggle {

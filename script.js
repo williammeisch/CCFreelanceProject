@@ -175,42 +175,46 @@ const setupProjectMediaGalleries = () => {
     imageEl.src = images[0].src;
     imageEl.alt = images[0].alt || imageEl.alt;
 
-    if (images.length > 1) {
-      const prevButton = document.createElement('button');
-      prevButton.type = 'button';
-      prevButton.className = 'project-carousel-arrow prev';
-      prevButton.setAttribute('aria-label', 'Previous project image');
-      prevButton.textContent = '←';
+    const prevButton = document.createElement('button');
+    prevButton.type = 'button';
+    prevButton.className = 'project-carousel-arrow prev';
+    prevButton.setAttribute('aria-label', 'Previous project image');
+    prevButton.textContent = '←';
 
-      const nextButton = document.createElement('button');
-      nextButton.type = 'button';
-      nextButton.className = 'project-carousel-arrow next';
-      nextButton.setAttribute('aria-label', 'Next project image');
-      nextButton.textContent = '→';
+    const nextButton = document.createElement('button');
+    nextButton.type = 'button';
+    nextButton.className = 'project-carousel-arrow next';
+    nextButton.setAttribute('aria-label', 'Next project image');
+    nextButton.textContent = '→';
 
-      const updateImage = () => {
-        const selected = images[currentIndex];
-        imageEl.src = selected.src;
-        imageEl.alt = selected.alt || imageEl.alt;
-      };
+    const updateImage = () => {
+      const selected = images[currentIndex];
+      imageEl.src = selected.src;
+      imageEl.alt = selected.alt || imageEl.alt;
+      const singleImage = images.length <= 1;
+      prevButton.disabled = singleImage;
+      nextButton.disabled = singleImage;
+    };
 
-      prevButton.addEventListener('click', (event) => {
-        event.preventDefault();
-        event.stopPropagation();
-        currentIndex = (currentIndex - 1 + images.length) % images.length;
-        updateImage();
-      });
+    prevButton.addEventListener('click', (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      if (images.length <= 1) return;
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      updateImage();
+    });
 
-      nextButton.addEventListener('click', (event) => {
-        event.preventDefault();
-        event.stopPropagation();
-        currentIndex = (currentIndex + 1) % images.length;
-        updateImage();
-      });
+    nextButton.addEventListener('click', (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      if (images.length <= 1) return;
+      currentIndex = (currentIndex + 1) % images.length;
+      updateImage();
+    });
 
-      gallery.appendChild(prevButton);
-      gallery.appendChild(nextButton);
-    }
+    gallery.appendChild(prevButton);
+    gallery.appendChild(nextButton);
+    updateImage();
 
     const target = card.dataset.cardLink;
     const external = card.dataset.cardLinkExternal === 'true';
