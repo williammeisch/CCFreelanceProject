@@ -200,9 +200,35 @@ const setupProjectMediaGalleries = () => {
       images = [];
     }
     if (!Array.isArray(images) || images.length === 0) return;
-    const mappedImages = projectImageMap[card.dataset.cardLink];
+    const cardKey = card.dataset.cardLink || '';
+    const mappedImages = projectImageMap[cardKey];
     if (Array.isArray(mappedImages) && mappedImages.length > 0) {
       images = mappedImages;
+    }
+
+    if (images.length < 2) {
+      console.warn('[ProjectCarousel] Fewer than 2 images found; injecting temporary placeholders.', {
+        cardKey,
+        title: card.querySelector('.project-content h3')?.textContent?.trim() || 'Unknown project',
+      });
+      const firstImage = images[0] || { src: 'https://picsum.photos/seed/cornelia-fallback-0/1200/900', alt: 'Fallback project image' };
+      images = [
+        firstImage,
+        { src: `https://picsum.photos/seed/${encodeURIComponent(cardKey || 'project')}-placeholder-1/1200/900`, alt: `${firstImage.alt || 'Project'} placeholder image 1` },
+        { src: `https://picsum.photos/seed/${encodeURIComponent(cardKey || 'project')}-placeholder-2/1200/900`, alt: `${firstImage.alt || 'Project'} placeholder image 2` },
+      ];
+    }
+
+    const hasInvalidPath = images.some((image) => {
+      if (!image || typeof image.src !== 'string') return true;
+      const src = image.src.trim();
+      return src.length === 0 || (!src.startsWith('http') && !src.startsWith('images/'));
+    });
+    if (hasInvalidPath) {
+      console.warn('[ProjectCarousel] Invalid image path detected for project card.', {
+        cardKey,
+        images,
+      });
     }
 
     const imageEl = gallery.querySelector('.project-image');
