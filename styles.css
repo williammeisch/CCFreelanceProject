@@ -385,6 +385,7 @@ ul { margin: 0; padding-left: 1.05rem; color: var(--muted); }
   object-fit: cover;
   display: block;
 }
+.gallery-image { cursor: pointer; }
 .project-media {
   display: grid;
   gap: .4rem;
@@ -622,6 +623,62 @@ ul { margin: 0; padding-left: 1.05rem; color: var(--muted); }
   border: 0;
 }
 
+.gallery-lightbox[hidden] { display: none; }
+.gallery-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 120;
+  background: rgba(0, 0, 0, .64);
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  animation: galleryFadeIn .2s ease;
+}
+.gallery-lightbox-dialog {
+  width: min(980px, 96vw);
+  background: #101826;
+  border: 1px solid rgba(255, 255, 255, .2);
+  border-radius: 14px;
+  padding: .85rem;
+}
+.gallery-lightbox-stage {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: .6rem;
+}
+#gallery-lightbox-image {
+  width: 100%;
+  max-height: 78vh;
+  object-fit: contain;
+  border-radius: 10px;
+  background: #090f18;
+  transition: opacity .2s ease;
+}
+.gallery-lightbox-nav,
+.gallery-lightbox-close {
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, .32);
+  background: rgba(255, 255, 255, .14);
+  color: #fff;
+  cursor: pointer;
+}
+.gallery-lightbox-close {
+  display: block;
+  margin-left: auto;
+  margin-bottom: .4rem;
+}
+.gallery-lightbox-nav:hover,
+.gallery-lightbox-close:hover {
+  background: rgba(255, 255, 255, .25);
+}
+@keyframes galleryFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
 .reveal { opacity: 0; transform: translateY(14px); transition: opacity .42s ease, transform .42s ease; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
@@ -650,6 +707,12 @@ ul { margin: 0; padding-left: 1.05rem; color: var(--muted); }
   .project-media.three-images .project-media-item,
   .project-media.four-images .project-media-item,
   .project-media.multi-images .project-media-item { min-height: 150px; }
+  .gallery-lightbox-stage { grid-template-columns: 1fr; }
+  .gallery-lightbox-nav {
+    width: 100%;
+    border-radius: 10px;
+    height: 2rem;
+  }
   .carousel { grid-template-columns: auto 1fr auto; gap: .55rem; }
   .carousel-btn {
     display: inline-flex;
