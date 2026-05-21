@@ -341,8 +341,171 @@ const setupContactModal = () => {
   });
 };
 
+const extractNaturalSortKey = (path) => {
+  const name = path.split('/').pop() || path;
+  const parts = name.match(/(\d+|\D+)/g) || [name];
+  return parts.map((part) => (/\d+/.test(part) ? Number(part) : part.toLowerCase()));
+};
+
+const compareNatural = (a, b) => {
+  const ka = extractNaturalSortKey(a);
+  const kb = extractNaturalSortKey(b);
+  const max = Math.max(ka.length, kb.length);
+  for (let i = 0; i < max; i += 1) {
+    if (ka[i] === undefined) return -1;
+    if (kb[i] === undefined) return 1;
+    if (ka[i] === kb[i]) continue;
+    if (typeof ka[i] === 'number' && typeof kb[i] === 'number') return ka[i] - kb[i];
+    return String(ka[i]).localeCompare(String(kb[i]));
+  }
+  return 0;
+};
+
+const setupMediaGalleryPage = async () => {
+  const galleryGrid = document.getElementById('media-gallery-grid');
+  if (!galleryGrid) return;
+
+  const overlay = document.getElementById('gallery-lightbox');
+  const closeBtn = document.getElementById('gallery-lightbox-close');
+  const prevBtn = document.getElementById('gallery-lightbox-prev');
+  const nextBtn = document.getElementById('gallery-lightbox-next');
+  const mediaHost = document.getElementById('gallery-lightbox-media');
+  if (!overlay || !closeBtn || !prevBtn || !nextBtn || !mediaHost) return;
+
+  const supportedImageExts = new Set(['jpg', 'jpeg', 'png']);
+  const supportedVideoExts = new Set(['mov', 'mp4']);
+
+  const isSupportedMedia = (file) => {
+    const clean = (file || '').trim();
+    const ext = clean.split('.').pop()?.toLowerCase();
+    if (!ext || clean.toLowerCase().endsWith('.gitkeep') || ext === 'txt' || ext === 'heic') return false;
+    return supportedImageExts.has(ext) || supportedVideoExts.has(ext);
+  };
+
+  const mediaTypeFromPath = (path) => (supportedVideoExts.has(path.split('.').pop().toLowerCase()) ? 'video' : 'image');
+
+  const loadFromManifest = async () => {
+    const response = await fetch('images/gallery/index.json', { cache: 'no-store' });
+    if (!response.ok) throw new Error('manifest not found');
+    const data = await response.json();
+    const files = Array.isArray(data) ? data : Array.isArray(data.files) ? data.files : [];
+    return files.filter(isSupportedMedia).map((file) => `images/gallery/${file}`);
+  };
+
+  const loadFromDirectoryListing = async () => {
+    const response = await fetch('images/gallery/', { cache: 'no-store' });
+    if (!response.ok) throw new Error('directory listing unavailable');
+    const html = await response.text();
+    const matches = [...html.matchAll(/href="([^"]+)"/gi)].map((m) => decodeURIComponent(m[1]));
+    const candidates = matches
+      .map((href) => href.replace(/^\.?\//, ''))
+      .filter((href) => isSupportedMedia(href) && !href.includes('/'));
+    return candidates.map((file) => `images/gallery/${file}`);
+  };
+
+  let mediaPaths = [];
+  try {
+    mediaPaths = await loadFromManifest();
+  } catch (_error) {
+    try {
+      mediaPaths = await loadFromDirectoryListing();
+    } catch (_dirError) {
+      mediaPaths = [];
+    }
+  }
+
+  mediaPaths = [...new Set(mediaPaths)].sort(compareNatural);
+  const mediaItems = mediaPaths.map((path) => ({ path, type: mediaTypeFromPath(path) }));
+
+  if (!mediaItems.length) {
+    galleryGrid.innerHTML = '<p class="gallery-empty">No gallery media found in <code>/images/gallery/</code>.</p>';
+    return;
+  }
+
+  galleryGrid.innerHTML = mediaItems
+    .map((item, index) => {
+      if (item.type === 'video') {
+        return `<article class="project-card gallery-card" data-gallery-index="${index}">
+          <div class="gallery-thumb-wrap">
+            <video class="project-image gallery-image gallery-video" src="${item.path}" preload="metadata" muted playsinline></video>
+            <span class="gallery-badge">Video</span>
+          </div>
+        </article>`;
+      }
+      return `<article class="project-card gallery-card" data-gallery-index="${index}">
+        <img class="project-image gallery-image" src="${item.path}" alt="Gallery media ${index + 1}" loading="lazy" />
+      </article>`;
+    })
+    .join('');
+
+  let currentIndex = 0;
+  let previousFocus = null;
+
+  const renderCurrentMedia = () => {
+    const item = mediaItems[currentIndex];
+    if (!item) return;
+    if (item.type === 'video') {
+      mediaHost.innerHTML = `<video class="gallery-lightbox-video" src="${item.path}" controls autoplay playsinline></video>`;
+    } else {
+      mediaHost.innerHTML = `<img id="gallery-lightbox-image" src="${item.path}" alt="Gallery media ${currentIndex + 1}" />`;
+    }
+  };
+
+  const openAt = (index, trigger) => {
+    currentIndex = index;
+    previousFocus = trigger || document.activeElement;
+    renderCurrentMedia();
+    overlay.hidden = false;
+    document.body.style.overflow = 'hidden';
+    closeBtn.focus();
+  };
+
+  const close = () => {
+    overlay.hidden = true;
+    mediaHost.innerHTML = '';
+    document.body.style.overflow = '';
+    if (previousFocus instanceof HTMLElement) previousFocus.focus();
+  };
+
+  const next = () => {
+    currentIndex = (currentIndex + 1) % mediaItems.length;
+    renderCurrentMedia();
+  };
+
+  const prev = () => {
+    currentIndex = (currentIndex - 1 + mediaItems.length) % mediaItems.length;
+    renderCurrentMedia();
+  };
+
+  galleryGrid.querySelectorAll('.gallery-card').forEach((card) => {
+    const index = Number(card.dataset.galleryIndex);
+    card.setAttribute('tabindex', '0');
+    card.addEventListener('click', () => openAt(index, card));
+    card.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        openAt(index, card);
+      }
+    });
+  });
+
+  closeBtn.addEventListener('click', close);
+  nextBtn.addEventListener('click', next);
+  prevBtn.addEventListener('click', prev);
+  overlay.addEventListener('click', (event) => {
+    if (event.target === overlay) close();
+  });
+  document.addEventListener('keydown', (event) => {
+    if (overlay.hidden) return;
+    if (event.key === 'Escape') close();
+    if (event.key === 'ArrowRight') next();
+    if (event.key === 'ArrowLeft') prev();
+  });
+};
+
 setupRecommendationsCarousel();
 setupRevealAnimation();
 setupProjectsToggle();
 setupContactModal();
 setupProjectMediaGalleries();
+setupMediaGalleryPage();
