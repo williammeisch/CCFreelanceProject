@@ -137,8 +137,10 @@ const setupProjectMediaGalleries = () => {
   const projectImageMap = {
     'https://sun.wnba.com/news/connecticut-sun-partners-with-blueforge-alliance-to-promote-buildsubmarines-com': [
       { src: 'images/ConnecticutSun-Thumbnail.jpeg', alt: 'Connecticut Sun and BlueForge Alliance partnership' },
-      { src: 'https://picsum.photos/seed/cornelia-sun-1/1200/900', alt: 'Connecticut Sun activation placeholder image 1' },
-      { src: 'https://picsum.photos/seed/cornelia-sun-2/1200/900', alt: 'Connecticut Sun activation placeholder image 2' },
+      { src: '/CCFreelanceProject/images/gallery/CCPortfolioPic48.png', alt: 'Connecticut Sun BuildSubmarines campaign image 48' },
+      { src: '/CCFreelanceProject/images/gallery/CCPortfolioPic61.png', alt: 'Connecticut Sun BuildSubmarines campaign image 61' },
+      { src: '/CCFreelanceProject/images/gallery/CCPortfolioPic62.png', alt: 'Connecticut Sun BuildSubmarines campaign image 62' },
+      { src: '/CCFreelanceProject/images/gallery/CCPortfolioPic63.png', alt: 'Connecticut Sun BuildSubmarines campaign image 63' },
     ],
     'https://www.buildsubmarines.com/newsroom/rfk-racing-and-blueforge-alliance-join-forces': [
       { src: 'images/FullThrottle-Thumbnail.jpeg', alt: 'RFK Racing partnership activation' },
