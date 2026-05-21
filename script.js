@@ -388,7 +388,7 @@ const setupMediaGalleryPage = async () => {
   // Add/remove filenames here as media changes in /images/gallery/.
   const MEDIA_GALLERY_FILES = [
     // Images
-    'CCPortfolioPic1.png', 'CCPortfolioPic2.pdf', 'CCPortfolioPicPic3.pdf', 'CCPortfolioPicPic4.jpg', 'Pic5.jpg',
+    'CCPortfolioPic1.png', 'CCPortfolioPic2.pdf', 'CCPortfolioPic3.pdf', 'CCPortfolioPic4.jpg', 'CCPortfolioPic5.jpg',
     'Pic6.jpg', 'Pic7.jpg', 'Pic8.jpg', 'Pic9.jpg', 'Pic10.jpg',
     'Pic11.jpg', 'Pic12.jpg', 'Pic13.jpg', 'Pic14.jpg', 'Pic15.jpg',
     'Pic16.jpg', 'Pic17.jpg', 'Pic18.jpg', 'Pic19.jpg', 'Pic20.jpg',
