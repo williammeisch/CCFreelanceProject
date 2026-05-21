@@ -454,6 +454,9 @@ const setupMediaGalleryPage = async () => {
     .filter(isSupportedMedia)
     .map((file) => `/CCFreelanceProject/images/gallery/${file}`);
   const mediaItems = mediaPaths.map((path) => ({ path, type: mediaTypeFromPath(path) }));
+  mediaItems.forEach((item) => {
+    console.log('Gallery media path:', item.path);
+  });
 
   if (!mediaItems.length) {
     galleryGrid.innerHTML = '<p class="gallery-empty">No gallery media found in <code>/images/gallery/</code>.</p>';
