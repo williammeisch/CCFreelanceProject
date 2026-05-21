@@ -407,7 +407,7 @@ const setupMediaGalleryPage = async () => {
 
   const mediaPaths = [...new Set(MEDIA_GALLERY_FILES)]
     .filter(isSupportedMedia)
-    .map((file) => `images/gallery/${file}`)
+    .map((file) => `/CCFreelanceProject/images/gallery/${file}`)
     .sort(compareNatural);
   const mediaItems = mediaPaths.map((path) => ({ path, type: mediaTypeFromPath(path) }));
 
