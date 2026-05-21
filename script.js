@@ -384,37 +384,31 @@ const setupMediaGalleryPage = async () => {
 
   const mediaTypeFromPath = (path) => (supportedVideoExts.has(path.split('.').pop().toLowerCase()) ? 'video' : 'image');
 
-  const loadFromManifest = async () => {
-    const response = await fetch('images/gallery/index.json', { cache: 'no-store' });
-    if (!response.ok) throw new Error('manifest not found');
-    const data = await response.json();
-    const files = Array.isArray(data) ? data : Array.isArray(data.files) ? data.files : [];
-    return files.filter(isSupportedMedia).map((file) => `images/gallery/${file}`);
-  };
+  // GitHub Pages-compatible static media source.
+  // Add/remove filenames here as media changes in /images/gallery/.
+  const MEDIA_GALLERY_FILES = [
+    // Images
+    'Pic1.jpg', 'Pic2.jpg', 'Pic3.jpg', 'Pic4.jpg', 'Pic5.jpg',
+    'Pic6.jpg', 'Pic7.jpg', 'Pic8.jpg', 'Pic9.jpg', 'Pic10.jpg',
+    'Pic11.jpg', 'Pic12.jpg', 'Pic13.jpg', 'Pic14.jpg', 'Pic15.jpg',
+    'Pic16.jpg', 'Pic17.jpg', 'Pic18.jpg', 'Pic19.jpg', 'Pic20.jpg',
+    'Pic21.jpg', 'Pic22.jpg', 'Pic23.jpg', 'Pic24.jpg', 'Pic25.jpg',
+    'Pic26.jpg', 'Pic27.jpg', 'Pic28.jpg', 'Pic29.jpg', 'Pic30.jpg',
+    'Pic31.jpg', 'Pic32.jpg', 'Pic33.jpg', 'Pic34.jpg', 'Pic35.jpg',
+    'Pic36.jpg', 'Pic37.jpg', 'Pic38.jpg', 'Pic39.jpg', 'Pic40.jpg',
+    'Pic41.jpg', 'Pic42.jpg', 'Pic43.jpg', 'Pic44.jpg', 'Pic45.jpg',
+    'Pic46.jpg', 'Pic47.jpg', 'Pic48.jpg', 'Pic49.jpg', 'Pic50.jpg',
+    'Pic51.jpg', 'Pic52.jpg', 'Pic53.jpg', 'Pic54.jpg', 'Pic55.jpg',
+    'Pic56.jpg', 'Pic57.jpg', 'Pic58.jpg', 'Pic59.jpg', 'Pic60.jpg',
+    'Pic61.jpg', 'Pic62.jpg', 'Pic63.jpg',
+    // Videos
+    'Video1.mov', 'Video2.mov',
+  ];
 
-  const loadFromDirectoryListing = async () => {
-    const response = await fetch('images/gallery/', { cache: 'no-store' });
-    if (!response.ok) throw new Error('directory listing unavailable');
-    const html = await response.text();
-    const matches = [...html.matchAll(/href="([^"]+)"/gi)].map((m) => decodeURIComponent(m[1]));
-    const candidates = matches
-      .map((href) => href.replace(/^\.?\//, ''))
-      .filter((href) => isSupportedMedia(href) && !href.includes('/'));
-    return candidates.map((file) => `images/gallery/${file}`);
-  };
-
-  let mediaPaths = [];
-  try {
-    mediaPaths = await loadFromManifest();
-  } catch (_error) {
-    try {
-      mediaPaths = await loadFromDirectoryListing();
-    } catch (_dirError) {
-      mediaPaths = [];
-    }
-  }
-
-  mediaPaths = [...new Set(mediaPaths)].sort(compareNatural);
+  const mediaPaths = [...new Set(MEDIA_GALLERY_FILES)]
+    .filter(isSupportedMedia)
+    .map((file) => `images/gallery/${file}`)
+    .sort(compareNatural);
   const mediaItems = mediaPaths.map((path) => ({ path, type: mediaTypeFromPath(path) }));
 
   if (!mediaItems.length) {
