@@ -203,20 +203,6 @@ const extractNaturalSortKey = (path) => {
   return parts.map((part) => (/\d+/.test(part) ? Number(part) : part.toLowerCase()));
 };
 
-const compareNatural = (a, b) => {
-  const ka = extractNaturalSortKey(a);
-  const kb = extractNaturalSortKey(b);
-  const max = Math.max(ka.length, kb.length);
-  for (let i = 0; i < max; i += 1) {
-    if (ka[i] === undefined) return -1;
-    if (kb[i] === undefined) return 1;
-    if (ka[i] === kb[i]) continue;
-    if (typeof ka[i] === 'number' && typeof kb[i] === 'number') return ka[i] - kb[i];
-    return String(ka[i]).localeCompare(String(kb[i]));
-  }
-  return 0;
-};
-
 const shuffleArray = (items) => {
   const array = [...items];
   for (let i = array.length - 1; i > 0; i -= 1) {
@@ -230,6 +216,7 @@ const setupMediaGalleryPage = async () => {
   const galleryGrid = document.getElementById('media-gallery-grid');
   if (!galleryGrid) return;
 
+  const featuredLocalVideos = document.getElementById('featured-local-videos');
   const overlay = document.getElementById('gallery-lightbox');
   const closeBtn = document.getElementById('gallery-lightbox-close');
   const prevBtn = document.getElementById('gallery-lightbox-prev');
@@ -326,32 +313,32 @@ const setupMediaGalleryPage = async () => {
     console.log('Gallery media path:', item.path);
   });
 
-  if (!mediaItems.length) {
+  if (!imageItems.length) {
     galleryGrid.innerHTML = '<p class="gallery-empty">No gallery media found in <code>/images/gallery/</code>.</p>';
     return;
   }
 
-  galleryGrid.innerHTML = mediaItems
-    .map((item, index) => {
-      if (item.type === 'video') {
-        return `<article class="project-card gallery-card" data-gallery-index="${index}">
-          <div class="gallery-thumb-wrap">
-            <video class="project-image gallery-image gallery-video" src="${item.path}" preload="metadata" muted playsinline></video>
-            <span class="gallery-badge">Video</span>
-          </div>
-        </article>`;
-      }
-      return `<article class="project-card gallery-card" data-gallery-index="${index}">
-        <img class="project-image gallery-image" src="${item.path}" alt="Gallery media ${index + 1}" loading="lazy" />
-      </article>`;
-    })
+  galleryGrid.innerHTML = imageItems
+    .map((item, index) => `<article class="project-card gallery-card" data-gallery-index="${index}">
+      <img class="project-image gallery-image" src="${item.path}" alt="Gallery media ${index + 1}" loading="lazy" />
+    </article>`)
     .join('');
+
+  if (featuredLocalVideos) {
+    featuredLocalVideos.innerHTML = videoItems
+      .map((item) => `<article class="featured-video-card">
+        <div class="featured-video-embed">
+          <video src="${item.path}" controls preload="metadata" playsinline></video>
+        </div>
+      </article>`)
+      .join('');
+  }
 
   let currentIndex = 0;
   let previousFocus = null;
 
   const renderCurrentMedia = () => {
-    const item = mediaItems[currentIndex];
+    const item = imageItems[currentIndex];
     if (!item) return;
     if (item.type === 'video') {
       mediaHost.innerHTML = `<video class="gallery-lightbox-video" src="${item.path}" controls autoplay playsinline></video>`;
@@ -377,12 +364,12 @@ const setupMediaGalleryPage = async () => {
   };
 
   const next = () => {
-    currentIndex = (currentIndex + 1) % mediaItems.length;
+    currentIndex = (currentIndex + 1) % imageItems.length;
     renderCurrentMedia();
   };
 
   const prev = () => {
-    currentIndex = (currentIndex - 1 + mediaItems.length) % mediaItems.length;
+    currentIndex = (currentIndex - 1 + imageItems.length) % imageItems.length;
     renderCurrentMedia();
   };
 
