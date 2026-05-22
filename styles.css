@@ -820,3 +820,19 @@ ul { margin: 0; padding-left: 1.05rem; color: var(--muted); }
 @media (max-width: 980px) {
   .featured-videos-layout { grid-template-columns: 1fr; }
 }
+.featured-video-link-card {
+  display: grid;
+  place-items: center;
+  min-height: 180px;
+}
+.featured-video-link {
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 700;
+  color: #22364f;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: .55rem .95rem;
+  background: #f8fafc;
+}
+.featured-video-link:hover { background: #eef2f7; }
