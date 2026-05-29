@@ -216,7 +216,7 @@ const setupMediaGalleryPage = async () => {
   const galleryGrid = document.getElementById('media-gallery-grid');
   if (!galleryGrid) return;
 
-  const featuredLocalVideos = document.getElementById('featured-local-videos');
+  const videoFeaturesGrid = document.getElementById('video-features-grid');
   const overlay = document.getElementById('gallery-lightbox');
   const closeBtn = document.getElementById('gallery-lightbox-close');
   const prevBtn = document.getElementById('gallery-lightbox-prev');
@@ -324,14 +324,17 @@ const setupMediaGalleryPage = async () => {
     </article>`)
     .join('');
 
-  if (featuredLocalVideos) {
-    featuredLocalVideos.innerHTML = videoItems
-      .map((item) => `<article class="featured-video-card">
-        <div class="featured-video-embed">
-          <video src="${item.path}" controls preload="metadata" playsinline></video>
-        </div>
-      </article>`)
-      .join('');
+  if (videoFeaturesGrid && videoItems.length) {
+    videoFeaturesGrid.insertAdjacentHTML(
+      'beforeend',
+      videoItems
+        .map((item) => `<article class="featured-video-card">
+          <div class="featured-video-embed">
+            <video src="${item.path}" controls preload="metadata" playsinline></video>
+          </div>
+        </article>`)
+        .join('')
+    );
   }
 
   let currentIndex = 0;

@@ -862,3 +862,25 @@ ul { margin: 0; padding-left: 1.05rem; color: var(--muted); }
   font-weight: 700;
   color: #2f4a6e;
 }
+
+/* Unified video features grid: YouTube, iSpot, and uploaded videos share one visual system. */
+#featured-videos .section-header { margin-bottom: 1.25rem; }
+#video-features-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+#video-features-grid .featured-video-card {
+  box-shadow: var(--shadow);
+}
+#video-features-grid .featured-video-card > div[style*="padding-top:56.25%"] {
+  position: relative !important;
+  padding-top: 56.25% !important;
+  padding-bottom: 0 !important;
+  overflow: hidden;
+  border-radius: 10px;
+}
+#video-features-grid .featured-video-card > div[style*="padding-top:56.25%"] iframe {
+  border: 0;
+}
+@media (max-width: 740px) {
+  #video-features-grid { grid-template-columns: 1fr; }
+}
