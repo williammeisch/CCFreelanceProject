@@ -321,6 +321,10 @@ const setupMediaGalleryPage = async () => {
     'CCPortfolioPic85.jpg',
     'CCPortfolioPic86.jpg',
     'CCPortfolioPic87.JPEG',
+    'CCPortfolioPic88.png',
+    'CCPortfolioPic89.png',
+    'CCPortfolioPic90.png',
+    'CCPortfolioPic91.png',
     'CCPortfolioMov1.mov',
     'CCPortfolioMov2.MOV',
   ];
