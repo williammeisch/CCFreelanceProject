@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Media Gallery | Cornelia Cifelli</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header" id="top">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html#top">Cornelia Cifelli</a>
+        <nav aria-label="Media navigation">
+          <ul class="nav-links">
+            <li><a href="/CCFreelanceProject/">Back to Portfolio</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- ==================== VIDEO FEATURES SECTION ==================== -->
+      <section class="section" id="featured-videos">
+        <div class="container">
+          <header class="section-header">
+            <h2 class="section-title">Video Features</h2>
+          </header>
+          <div class="featured-videos-grid" id="video-features-grid">
+            <article class="featured-video-card">
+              <div class="featured-video-embed">
+                <iframe src="https://www.youtube.com/embed/0X9YhNvcZFc" title="Featured video 1" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </div>
+            </article>
+            <article class="featured-video-card">
+              <div class="featured-video-embed">
+                <iframe src="https://www.youtube.com/embed/r0E9xczRu04" title="Featured video 2" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </div>
+            </article>
+            <article class="featured-video-card">
+              <div class="featured-video-embed">
+                <iframe src="https://www.youtube.com/embed/ewWWFZyHnjQ" title="Featured video 3" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </div>
+            </article>
+            <article class="featured-video-card">
+              <div class="featured-video-embed">
+                <iframe src="https://www.youtube.com/embed/V-cbxNIPnr0" title="Featured video 4" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </div>
+            </article>
+            <article class="featured-video-card">
+              <div class="featured-video-embed">
+                <iframe src="https://www.youtube.com/embed/dCIXm7PIkHE" title="Featured video 5" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </div>
+            </article>
+            <article class="featured-video-card">
+              <div style="position:relative; width:100%; padding-top:56.25%; padding-bottom:40px;">
+                <iframe
+                  src="https://www.ispot.tv/share/2XTo"
+                  style="position:absolute; top:0; right:0; left:0; bottom:0; width:100%; height:100%;"
+                  frameborder="0"
+                  scrolling="no"
+                  allowfullscreen="">
+                </iframe>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== MEDIA GALLERY SECTION ==================== -->
+      <section class="section" id="media-gallery">
+        <div class="container">
+          <header class="section-header">
+            <h1 class="section-title">MEDIA GALLERY</h1>
+            <p>Additional event and media visuals.</p>
+          </header>
+          <div class="projects-grid" id="media-gallery-grid"></div>
+        </div>
+      </section>
+    </main>
+    <div class="gallery-lightbox" id="gallery-lightbox" hidden>
+      <div class="gallery-lightbox-dialog" role="dialog" aria-modal="true" aria-labelledby="gallery-lightbox-title">
+        <button class="gallery-lightbox-close" id="gallery-lightbox-close" type="button" aria-label="Close gallery image viewer">✕</button>
+        <h2 id="gallery-lightbox-title" class="visually-hidden">Gallery image viewer</h2>
+        <div class="gallery-lightbox-stage">
+          <button class="gallery-lightbox-nav" id="gallery-lightbox-prev" type="button" aria-label="Previous gallery image">←</button>
+          <div id="gallery-lightbox-media"></div>
+          <button class="gallery-lightbox-nav" id="gallery-lightbox-next" type="button" aria-label="Next gallery image">→</button>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
