@@ -220,11 +220,10 @@ ul { margin: 0; padding-left: 1.05rem; color: var(--muted); }
   font-weight: 800;
   font-size: .75rem;
   line-height: 1.1;
+  background: #f1f1f1;
+  color: #2c2c2c;
+  border: 1px solid #d7d7d7;
 }
-.school-item.asu { border-left: 4px solid #8c1d40; }
-.school-item.asu .school-mark { background: #ffc627; color: #5c1230; }
-.school-item.txst { border-left: 4px solid #501214; }
-.school-item.txst .school-mark { background: #d0a968; color: #3a0d0f; }
 
 
 .carousel { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: .8rem; }
